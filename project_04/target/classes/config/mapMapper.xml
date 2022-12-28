@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  DB 테이블명 : areas -->
+<mapper namespace="map">
+	<select id="map_list" parameterType="string" resultType="dto.MapDTO">
+		 <![CDATA[
+		  SELECT area_num, area_title, area_address1, area_address2, area_mapx, area_mapy, area_image, area_overview, area_create_date, area_sigungu_sigungu_num
+		FROM (select * from areas order by dbms_random.random())
+		WHERE rownum <= 500   
+			 ]]> 
+	</select>
+	
+</mapper>   
