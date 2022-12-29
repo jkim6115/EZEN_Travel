@@ -88,6 +88,9 @@ function initMap() {
       },
     ],
   });
+  
+  //전체 마커가 아닌 뷰페이지의 마커만 로드되도록 설정
+  google.maps.event.addListener(map, 'dragend', function() {showMarkersInViewport()});
 
   var loc = []; //마커와 리스트에 출력할 db자료를 가져온뒤 배열 형태로 저장하기 위해 생성
 
@@ -114,8 +117,7 @@ function initMap() {
             data[i].area_title +
             '</h1>' +
             '<img style="float:left; width:100px; margin-top:30px; margin-right:15px;" src="' +
-            data[i].area_image +
-            '">' +
+            data[i].area_image + '">' +
             '<br>' +
             '<h2>업데이트 예정</h2>' +
             '<a>http:업데이트예정</a>',
@@ -144,11 +146,21 @@ function initMap() {
           map: map,
         });
         
+   
+    //현재의 뷰페이지에 포함되어있는 마커의 좌표를 selected배열에 담습니다.
+    function getPlace(a) {
+    if (a == null || a == undefined) return null;
+    var selected = [];
+    for (i=0; i < loc.length; i++) {
+        if (a.contains(new google.maps.LatLng(loc[i].coords.mapx, loc[i].coords.mapy))) {
+            selected.push(loc[i]);
+        }
+    }
+    return selected;
+ }
+        
       
 
-        /* if(props.iconImage){
-            marker.setIcon(props.iconImage);
-          } */
 
         //마커 클릭이벤트
         if (props.content) {

@@ -13,7 +13,7 @@ import dto.MapDTO;
 @Controller
 public class MapController {
 
-	// http://localhost:8090/myapp/mainmap.do
+	// http://localhost:8090/controller/mainmap.do
 
 	
 
