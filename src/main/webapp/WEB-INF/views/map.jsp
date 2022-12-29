@@ -22,7 +22,10 @@
       <div class="et login">
         <!--우측상단탭-->
         <ul class="login_list">
-          <li><a href="#" class="login_button">로그인</a></li>
+          <li><a href="javascript:kakaoLogin()"class="login_button">로그인</a>
+           <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+                       <script src="resources/js/main.js"></script>
+          </li>
         </ul>
       </div>
 
