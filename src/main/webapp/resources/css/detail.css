@@ -1,0 +1,286 @@
+/* 글씨체 */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* ================ 공통 설정 ================ */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Jua';
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 234, 1) 0%,
+    rgba(255, 252, 240, 1) 35%,
+    #b7e8eb 100%
+  );
+}
+
+/* 스크롤 가리기 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.view_main {
+  position: relative;
+  z-index: 3;
+}
+
+li {
+  float: left;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 가운데 정렬이 필요한 부분 */
+.et {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/*=============================================*/
+
+/*=============== 바디 애니메이션 ================*/
+/* 파도웨이브 밑 오션박스 */
+.ocean {
+  height: 500px;
+  width: 2000px;
+  margin-left: -10px;
+  position: relative;
+  left: 0;
+  bottom: 500px;
+  background: #015871;
+  z-index: 1;
+}
+
+/*바디 파도웨이브 설정*/
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+/*====================================================*/
+
+/*=========== 헤더(로고, 로그인 등 카테고리) ============*/
+
+.header {
+  width: 940px;
+  height: 400px;
+}
+
+/* 로그인 등 카테고리*/
+.category {
+  width: 230px;
+  height: 0px;
+  float: right;
+}
+
+.category_list li {
+  margin-left: 9px;
+  margin-top: 17px;
+  display: inline;
+  font-size: 20px;
+  position: relative;
+}
+
+.category_button {
+  background: linear-gradient(to bottom, #8aa0b8 5%, #476e9e 100%);
+  background-color: #8aa0b8;
+  border-radius: 28px;
+  border: 1px solid #4e6096;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 4px 15px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2b3e70;
+}
+.category_button:hover {
+  background: linear-gradient(to bottom, #476e9e 5%, #8aa0b8 100%);
+  background-color: #476e9e;
+}
+.category_button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* 로고배너 */
+.logo {
+  width: 300px;
+  height: 340px;
+}
+
+/* =============== 섹션 =============== */
+
+/* detail_section */
+.detail_section {
+  position: relative;
+  width: 1340px;
+  height: 1240px;
+  margin: 0 auto;
+  /*background-color: #d3e9fc;*/
+}
+
+/* detail_box */
+.detail_box {
+  float: left;
+  width: 1340px;
+  height: 1220px;
+  margin-top: 50px;
+}
+
+/* detail_img */
+#detail_img {
+  margin: 0 auto;
+  width: 920px;
+  height: 620px;
+}
+
+#detail_img > img {
+	width: 920px;
+  height: 620px;
+}
+
+/* slide btn  */
+.slide_btn_box > button {
+  position: relative;
+  top: 60%;
+  margin-top: -45px;
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+  color: white;
+  background-color: #023059;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.slide_btn_box > .slide_btn_prev {
+  display: block;
+  top: -250px;
+  left: 100px;
+}
+
+.slide_btn_box > .slide_btn_next {
+  display: block;
+  top: -250px;
+  right: -1170px;
+}
+
+.slide_btn_box > .slide_btn_prev:hover {
+  background-color: #347ebf;
+}
+
+.slide_btn_box > .slide_btn_next:hover {
+  background-color: #347ebf;
+}
+
+/* detail_src */
+#detail_src {
+	padding: 20px;
+  width: 900px;
+  height: 300px;
+  margin-top: 50px;
+  margin-left: 200px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+#detail_src > h4 {
+	margin-top: -10px;
+}
+
+#detail_web {
+	padding: 20px;
+  width: 900px;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 200px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+#detail_web > h4 {
+	margin-top: -10px;
+}
+
+/*====================================================*/
+
+/* ================ 풋터(정보) ===============*/
+.footer {
+  width: 1200px;
+  height: 300px;
+  color: rgb(255, 252, 240);
+}
+
+#bottomIcon {
+  font-size: 15px;
+}
+
+#icon1 {
+  vertical-align: bottom;
+}
+#icon2 {
+  vertical-align: bottom;
+}
+
+.info1 {
+  width: 600px;
+  float: left;
+}
+
+.info2 {
+  width: 500px;
+  float: right;
+  text-align: right;
+}
+
+/*====================================================*/
