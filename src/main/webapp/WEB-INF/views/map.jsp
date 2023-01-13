@@ -28,10 +28,26 @@
       <header class="et header"><!-- 헤더 -->
         <div class="category"><!-- 카테고리 전체 div -->
           <ul class="category_list"><!-- 카테고리 리스트 ul -->
-            <li><a href="#" class="category_button">로그인</a></li>
-            <li><a href="#" class="category_button">커뮤니티</a></li>
-            <li><a href="#" class="category_button">소개</a></li>
+            <li><a class="login_button" href="javascript:kakaoLogin()">로그인</a>
+					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+					<script src="resources/js/login.js"></script></li>
+					
+			<li><a class="logout_button" href="javascript:kakaoLogout()">로그아웃</a>
+					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+					<script src="resources/js/logout.js"></script></li>
+
+			<li><a class="secession_button" href="javascript:secession()">회원탈퇴</a>
+					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+					<script src="resources/js/secession.js"></script></li>
           </ul>
+          <form id="form-kakao-login" method="post" action="/controller/login.do">
+		  		<input type="hidden" name="id"/>
+		    	<input type="hidden" name="nickname"/>
+		    	<input type="hidden" name="email"/>
+		    	<input type="hidden" name="gender"/>
+		    	<input type="hidden" name="age_range"/>
+		    	<input type="hidden" name="profile"/>
+		  </form>
         </div>
         <div class="et logo">
           <!--중앙로고배너-->

@@ -5,13 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ezentravel.DAO.MapDaoImp;
 import com.ezentravel.DTO.MapDTO;
+import com.ezentravel.DTO.UserDTO;
 
 //http://localhost:8090/controller/mainmap.do
 //http://localhost:8090/controller/rankmap.do
@@ -60,4 +65,11 @@ public class MapController {
 			return dao.map_detail(Integer.parseInt(area_num));
 		}
 		
+		@ResponseBody
+		@PostMapping("/login.do")
+		public ModelAndView login_process(@ModelAttribute UserDTO userDTO) {
+			ModelAndView mv = new ModelAndView("redirect://mainmap.do");
+			dao.user_insert(userDTO);
+			return mv;
+		}
 }

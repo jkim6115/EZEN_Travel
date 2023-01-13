@@ -28,6 +28,24 @@ function kakaoLogin() {
         url: "/v2/user/me",
         success: (res) => {
           const kakao_account = res.kakao_account;
+          
+          let id = res.id;
+          let email = res.kakao_account.email;
+          let gender = res.kakao_account.gender;
+          let nickname = res.kakao_account.profile.nickname;
+          let profile = res.kakao_account.profile.thumbnail_image_url;
+          let age_range = res.kakao_account.age_range;
+          
+	      $('#form-kakao-login input[name=id]').val(id);				
+		  $('#form-kakao-login input[name=email]').val(email);
+		  $('#form-kakao-login input[name=gender]').val(gender);
+		  $('#form-kakao-login input[name=nickname]').val(nickname);
+		  $('#form-kakao-login input[name=profile]').val(profile);
+		  $('#form-kakao-login input[name=age_range]').val(age_range);
+		  
+		  // 사용자 정보가 포함된 폼을 서버로 제출한다.
+		  document.querySelector('#form-kakao-login').submit();
+		  
           alert("로그인 성공");
         },
       });
