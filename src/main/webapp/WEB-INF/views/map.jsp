@@ -9,8 +9,7 @@
     <!-- ajax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!-- 최신 JS코드 사용 -->
-    <script
-      async
+    <script async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVawMw-q5O-9DAhYGSOXKdnAYK0nof_0E&callback=initMap"
     ></script>
     <!-- 구글맵 api 사용 키 -->
@@ -26,17 +25,20 @@
   <body>
     <div class="view_main"><!-- 메인페이지 전체 div-->
       <header class="et header"><!-- 헤더 -->
-        <div class="category"><!-- 카테고리 전체 div -->
-          <ul class="category_list"><!-- 카테고리 리스트 ul -->
-            <li><a class="login_button" href="javascript:kakaoLogin()">로그인</a>
+        <div class="login"><!-- 카테고리 전체 div -->
+          <ul class="login_list"><!-- 카테고리 리스트 ul -->
+            <li><a class="login_button" href="javascript:kakaoLogin()"><img src="resources/image/로그인.png"
+              />로그인</a>
 					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 					<script src="resources/js/login.js"></script></li>
 					
-			<li><a class="logout_button" href="javascript:kakaoLogout()">로그아웃</a>
+			<li><a class="logout_button" href="javascript:kakaoLogout()"><img src="resources/image/로그아웃.png"
+              />로그아웃</a>
 					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 					<script src="resources/js/logout.js"></script></li>
 
-			<li><a class="secession_button" href="javascript:secession()">회원탈퇴</a>
+			<li><a class="secession_button" href="javascript:secession()"><img src="resources/image/회원탈퇴.png"
+              />회원탈퇴</a>
 					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 					<script src="resources/js/secession.js"></script></li>
           </ul>
@@ -55,6 +57,12 @@
             <img src="resources/image/logo.png" alt="로고" />
           </a>
         </div>
+        <div class="category"><!-- 카테고리 전체 div -->
+          <ul class="category_list"><!-- 카테고리 리스트 ul -->
+            <li><a href="./board.do" class="category_button">E.T 광장</a></li>
+            <li><a href="#" class="category_button">E.T 소개</a></li>
+          </ul>
+        </div>
       </header>
       <div class="trand_slide_box">
         <!-- 슬라이드와 텍스트를 담는 박스 -->
@@ -66,8 +74,10 @@
           </ul>
           <p class="trand_slide_controller">
             <!-- 슬라이드 좌우 버튼 -->
-            <span class="prev">&lang;</span>
-            <span class="next">&rang;</span>
+            <span class="prev"><img src="resources/image/prev.png"
+              /></span>
+            <span class="next"><img src="resources/image/next.png"
+              /></span>
           </p>
         </div>
       </div>
@@ -76,14 +86,13 @@
         <div class="et tag_fillter">
           <!-- 태그 필터 -->
           <ul class="tag_fillter_list">
-            <li class="tag_fillter_item tag_fillter_active" onclick="location.href='http://localhost:8090/controller/mainmap.do'" value="entire">
+          <li class="tag_fillter_item tag_fillter_active" value="13">
               <span class="tag_fillter_icon"
                 ><img src="resources/image/전체.png"
               /></span>
               <span class="tag_fillter_text">전체</span>
             </li>
-            
-            <li class="tag_fillter_item" onclick="location.href='http://localhost:8090/controller/mainmap.do?tag_num=12'" value="12">
+            <li class="tag_fillter_item" value="12">
               <span class="tag_fillter_icon"
                 ><img src="resources/image/낮은산.png"
               /></span>
@@ -182,36 +191,8 @@
       </section>
       <footer class="et footer">
         <!-- 풋터 -->
-        <div class="et info1">
-          <p>고객센터</p>
-          <p>070-4795-4042</p>
-          <div id="bottomText">
-            <p>월요일 ~ 금요일 / 10:00 - 17:00</p>
-            <p>점심시간 12:00 - 13:00</p>
-            <p>주말 및 공휴일 휴무</p>
-          </div>
-          <div id="bottomIcon">
-            <p>
-              <img
-                src="resources/image/final_footer01.png"
-                alt="01"
-                id="icon1"
-              />
-              플러스 친구 : ezen_travel
-            </p>
-            <p>
-              <img
-                src="resources/image/final_footer02.png"
-                alt="02"
-                id="icon2"
-              />
-              인스타그램 : ezen_travel
-            </p>
-          </div>
-        </div>
-        <div class="et info2">
+        <div class="et info">
           <p>법인명(상호) : ezentravel</p>
-          <br />
           <p>
             Copyright © ezentravel. All rights reserved. Hosting by cafe24 corp.
           </p>
@@ -229,20 +210,5 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVawMw-q5O-9DAhYGSOXKdnAYK0nof_0E&callback=initMap&v=weekly"
       defer
     ></script>
-    <!--구글맵 api 사용 key-->
-    <script type="text/javascript">
-    
-    //태그필터 마우스오버 이벤트
-    const menuItems = document.querySelectorAll('.tag_fillter_item');
-    let previousSelectedItem = menuItems[0];
-
-    menuItems.forEach((item) => {
-      item.addEventListener('mouseover', () => {
-        previousSelectedItem?.classList.remove('tag_fillter_active');
-        previousSelectedItem = item;
-        item.classList.add('tag_fillter_active');
-      });
-    });
-    </script>
   </body>
 </html>

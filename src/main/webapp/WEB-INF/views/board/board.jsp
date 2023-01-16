@@ -94,7 +94,7 @@ table, tr, th, td {
 		<div class="et logo">
 			<!--중앙로고배너-->
 			<h1 class="logo_img">
-				<a href="http://localhost:8090/controller/mainmap.do"> <img src="resources/image/logo.png" alt="로고" />
+				<a href="./mainmap.do"> <img src="resources/image/logo.png" alt="로고" />
 				</a>
 			</h1>
 		</div>

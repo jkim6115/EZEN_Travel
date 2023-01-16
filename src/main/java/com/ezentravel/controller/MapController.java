@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +51,12 @@ public class MapController {
 			return dao.map_rank();
 		}
 		
+		@ResponseBody
+		@RequestMapping(value="/tagsmap.do", method=RequestMethod.POST)
+		public List<MapDTO> tags_process(int tag_num) {
+			return dao.tag_list(tag_num);
+		}
+		
 		@RequestMapping(value = "/detail.do", method = RequestMethod.GET)
 		public String detail_execute(@RequestParam("area_num") String area_num, Model model) {
 			dao.map_readcount(Integer.parseInt(area_num));
@@ -68,7 +73,7 @@ public class MapController {
 		@ResponseBody
 		@PostMapping("/login.do")
 		public ModelAndView login_process(@ModelAttribute UsDTO usDTO) {
-			ModelAndView mv = new ModelAndView("redirect://mainmap.do");
+			ModelAndView mv = new ModelAndView("redirect:/mainmap.do");
 			try {
 				dao.user_insert(usDTO);
 			} catch (org.springframework.dao.DuplicateKeyException e) {

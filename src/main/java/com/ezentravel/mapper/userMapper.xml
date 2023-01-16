@@ -5,7 +5,7 @@
 
 <!--  DB 테이블명 : us -->
 <mapper namespace="user">
-	<insert id="user_insert" parameterType="com.ezentravel.DTO.UserDTO">
+	<insert id="user_insert" parameterType="com.ezentravel.DTO.UsDTO">
 		INSERT INTO us (user_num, nickname)
 		VALUES ( #{user_num}, #{nickname})
 	</insert>

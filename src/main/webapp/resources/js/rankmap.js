@@ -1,6 +1,5 @@
 const tg = document.querySelector(".trand_slide_list"); //각각의 슬라이드(li)
 const trand_slide_list = document.querySelectorAll('.trand_slide_list > li'); //슬라이드 이미지 전체
-const trand_slide_list_a = document.querySelectorAll('.trand_slide_list > li > a');
 const prev = document.querySelector('.prev'); //이전버튼
 const next = document.querySelector('.next'); //다음버튼
 
@@ -15,6 +14,26 @@ $.ajax({
     alert("error");
   },
 });
+
+function addList(data) {	
+	for(let i = 0; i < 10; i++) {
+		const li = document.createElement('li');
+		const img = document.createElement('img');
+		const a = document.createElement('a');
+		const p = document.createElement('p');
+		a.href = './detail.do?area_num='+data[i].area_num+'';
+		
+		img.setAttribute('src', data[i].area_image);
+		
+		a.appendChild(img);
+		li.appendChild(a);
+		p.append(data[i].area_title);
+		li.appendChild(p);
+		a.appendChild
+		
+		tg.append(li);
+	}
+}
     
 const startSlide = setInterval(sliderGo, 3000); // 3초마다 함수 sliderGo 함수 발동시키기
 let currentIdx = 0; //슬라이드 index 값
@@ -44,22 +63,6 @@ prev.addEventListener('click', function () {
     sliderGo('a'); //sliderGo 함수에서 이벤트발생의 출처가 이전버튼인지 다음버튼인지 구분하기 위해 이전버튼을 눌렀을 때는 임의값을 넘겨주기로한다('1').
     setInterval(sliderGo, 3000);// 자동 슬라이드를 다시 실행시킨다.
 });
-
-function addList(data) {	
-	for(let i = 0; i < 10; i++) {
-		const li = document.createElement('li');
-		const img = document.createElement('img');
-		const a = document.createElement('a');
-		
-		a.href = "./detail.do?area_num=" + data[i].area_num;
-		
-		img.setAttribute('src', data[i].area_image);
-		a.appendChild(img);
-		li.appendChild(a);
-		
-		tg.append(li);
-	}
-}
     
 function sliderGo(isPrev) {
 	let buttonType;
