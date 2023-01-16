@@ -8,6 +8,7 @@
 </head>
 <link rel="stylesheet" href="resources/css/intro.css" />
 <body>
+	<div class="view_main">
 	<header class="et header"><!-- 헤더 -->
         <div class="login"><!-- 카테고리 전체 div -->
           <ul class="login_list"><!-- 카테고리 리스트 ul -->
@@ -49,7 +50,7 @@
         </div>
       </header>
       
-      <main>
+      <section>
       	<div id="wrap">
       		<h1 class="title">EZEN Travel 소개</h1>
       		<h2 class="member">
@@ -61,7 +62,7 @@
       			사용자는 커뮤니티를 이용해 다른 사용자와 소통할 수 있습니다.
       		</p>
       	</div>
-      </main>
+      </section>
       
       <footer class="et footer">
         <!-- 풋터 -->
@@ -72,7 +73,7 @@
           </p>
         </div>
       </footer>
-      
+     </div>
       <div class="ocean">
         <!-- 바다 출력 div -->
         <div class="wave"></div>
@@ -80,5 +81,6 @@
         <div class="wave"></div>
         <!-- 입체적효과 위해 웨이브 1개 추가 -->
       </div>
+ 
 </body>
 </html>

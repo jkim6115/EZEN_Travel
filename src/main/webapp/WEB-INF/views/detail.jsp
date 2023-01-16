@@ -77,36 +77,8 @@
 
       <footer class="et footer">
         <!-- 풋터 -->
-        <div class="et info1">
-          <p>고객센터</p>
-          <p>070-4795-4042</p>
-          <div id="bottomText">
-            <p>월요일 ~ 금요일 / 10:00 - 17:00</p>
-            <p>점심시간 12:00 - 13:00</p>
-            <p>주말 및 공휴일 휴무</p>
-          </div>
-          <div id="bottomIcon">
-            <p>
-              <img
-                src="resources/image/final_footer01.png"
-                alt="01"
-                id="icon1"
-              />
-              플러스 친구 : ezen_travel
-            </p>
-            <p>
-              <img
-                src="resources/image/final_footer02.png"
-                alt="02"
-                id="icon2"
-              />
-              인스타그램 : ezen_travel
-            </p>
-          </div>
-        </div>
-        <div class="et info2">
+        <div class="et info">
           <p>법인명(상호) : ezentravel</p>
-          <br />
           <p>
             Copyright © ezentravel. All rights reserved. Hosting by cafe24 corp.
           </p>

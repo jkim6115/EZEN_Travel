@@ -276,30 +276,15 @@ a {
 /* ================ 풋터(정보) ===============*/
 .footer {
   width: 1200px;
-  height: 400px;
+  height: 300px;
   color: rgb(255, 252, 240);
 }
 
-#bottomIcon {
-  font-size: 15px;
-}
-
-#icon1 {
-  vertical-align: bottom;
-}
-#icon2 {
-  vertical-align: bottom;
-}
-
-.info1 {
-  width: 600px;
-  float: left;
-}
-
-.info2 {
+.info {
   width: 500px;
-  float: right;
-  text-align: right;
+  margin: 0 auto;
+  margin-top: 200px;
+  text-align: center;
 }
 
 /*====================================================*/
