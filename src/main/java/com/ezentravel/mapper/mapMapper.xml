@@ -30,13 +30,14 @@
 	
 	<select id="map_tagList" parameterType="int" resultType="com.ezentravel.DTO.MapDTO">
 		<![CDATA[
-	select *
-	from (SELECT a.*
-		FROM AREAS a
-		INNER JOIN TAGS_AREAS ta ON a.AREA_NUM = ta.AREAS_AREA_NUM 
-		INNER JOIN TAGS t ON t.TAG_NUM = ta.TAGS_TAG_NUM 
-		WHERE t.TAG_NUM = #{tag_num})
-		where rownum <= 50
+			SELECT * FROM (
+				SELECT a.*
+				FROM AREAS a
+				INNER JOIN TAGS_AREAS ta ON a.AREA_NUM = ta.AREAS_AREA_NUM 
+				INNER JOIN TAGS t ON t.TAG_NUM = ta.TAGS_TAG_NUM 
+				WHERE t.TAG_NUM = #{tag_num} 
+				ORDER BY dbms_random.value
+			) WHERE rownum <= 50
 		]]>
 	</select>
 </mapper> 
