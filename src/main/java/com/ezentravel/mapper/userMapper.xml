@@ -3,10 +3,10 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!--  DB 테이블명 : kakao_login -->
+<!--  DB 테이블명 : us -->
 <mapper namespace="user">
 	<insert id="user_insert" parameterType="com.ezentravel.DTO.UserDTO">
-		INSERT INTO kakao_login (id, nickname, email, gender, age_range, profile)
-		VALUES ( #{id}, #{nickname}, #{email}, #{gender}, #{age_range}, #{profile} )
+		INSERT INTO us (user_num, nickname)
+		VALUES ( #{user_num}, #{nickname})
 	</insert>
 </mapper> 

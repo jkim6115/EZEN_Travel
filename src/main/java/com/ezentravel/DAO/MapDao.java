@@ -2,7 +2,7 @@ package com.ezentravel.DAO;
 import java.util.List;
 
 import com.ezentravel.DTO.MapDTO;
-import com.ezentravel.DTO.UserDTO;
+import com.ezentravel.DTO.UsDTO;
 
 public interface MapDao {
 
@@ -12,5 +12,5 @@ public interface MapDao {
 	public int map_readcount(int area_num);
 	public List<MapDTO> tag_list(int tag_num);
 	
-	public int user_insert(UserDTO userDTO);
+	public int user_insert(UsDTO usDTO);
 }

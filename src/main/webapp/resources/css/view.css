@@ -1,0 +1,265 @@
+/* 글씨체 */
+@import
+	url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap")
+	;
+
+/* ========= 공통 설정 ========= */
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Poor Story";
+	background-color: #e9f8ff;
+}
+
+li {
+	float: left;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.et {
+	width: 1600px;
+	margin: 0 auto;
+}
+
+.header {
+	margin-top: 0;
+	width: 1340px;
+	height: 400px;
+	background-color: #47bae7;
+}
+
+/* blind 숨김 설정 */
+.blind {
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	top: -99999px;
+	position: absolute;
+	overflow: hidden;
+}
+
+/* 우측상단 로그인 */
+.login {
+	width: 230px;
+	height: 0px;
+	float: right;
+}
+
+.login_list li {
+	margin-left: 9px;
+	margin-top: 17px;
+	display: inline;
+	font-size: 20px;
+	position: relative;
+}
+
+.login_button {
+	background: linear-gradient(to bottom, #8aa0b8 5%, #476e9e 100%);
+	background-color: #8aa0b8;
+	border-radius: 28px;
+	border: 1px solid #4e6096;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 13px;
+	padding: 4px 15px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #2b3e70;
+}
+
+.login_button:hover {
+	background: linear-gradient(to bottom, #476e9e 5%, #8aa0b8 100%);
+	background-color: #476e9e;
+}
+
+.login_button:active {
+	position: relative;
+	top: 1px;
+}
+
+/* 중앙 로고배너 이미지 */
+.logo {
+	margin-top: -21px;
+	margin-left: 520px;
+	width: 300px;
+	height: 340px;
+}
+
+/* 상단 카테고리 */
+.category {
+	width: 370px;
+	height: 35px;
+	text-align: center;
+	display: inline-block;
+	background-color: #1a5d97;
+	margin-left: 485px;
+}
+
+.category_list {
+	width: 500px;
+	margin: auto;
+}
+
+.category_list a {
+	color: #fffaed;
+}
+
+.category_list li {
+	font-size: 15px;
+	margin: 7px 38px;
+}
+
+/* =============== Content Section =============== */
+
+/* content_wrap */
+.content_section {
+	position: relative;
+	width: 1340px;
+	height: auto;
+	margin: 0 auto;
+	background-color: #d3e9fc;
+}
+
+.content_view_all {
+	padding-top: 50px;
+}
+
+.content_wrbox{
+	position: relative;
+	height: auto;
+}
+
+/* 목록, 수정, 삭제 버튼 */
+.content_view_btn {
+	float: right;
+	margin-right: 170px;
+	margin-top: 50px;
+}
+
+.content_view_btn #vw_list {
+	width: 70px;
+	height: 40px;
+	font-size: 17px;
+	border: 2px solid #29367c;
+	text-align: center;
+	background-color: #fff;
+	color: #29367c;
+	cursor: pointer;
+}
+
+.content_view_btn #vw_modify {
+	width: 70px;
+	height: 40px;
+	font-size: 17px;
+	border: 2px solid #29367c;
+	text-align: center;
+	background-color: #29367c;
+	color: #fff;
+	cursor: pointer;
+}
+
+.content_view_btn #vw_delete {
+	width: 70px;
+	height: 40px;
+	font-size: 17px;
+	border: 2px solid #29367c;
+	text-align: center;
+	background-color: #fff;
+	color: #29367c;
+	cursor: pointer;
+}
+
+/* 제목 및 본문 설정 */
+.content_view {
+	position: absolute;
+	width: 1000px;
+	height: auto;
+	box-sizing: border-box;
+	border-top: 5px solid #29376c;
+	margin-left: 170px;
+	margin-top: 100px;
+}
+
+/* 제목 글 설정 */
+.subject_area {
+	margin-top: 20px;
+	width: 1000px;
+	border-bottom: 3px solid #8aa0b8;
+}
+
+.subject_area .subject {
+	font-size: 30px;
+	vertical-align: 20px;
+}
+
+/* 본문 글 설정 */
+.wr_info {
+	float: right;
+	padding-top: 30px;
+}
+
+.wr_info span {
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+/* 하단 댓글 */
+.content_foot {
+	position: relative;
+	border: 1px solid black;
+	margin-top: 500px;
+	text-align: -webkit-center;
+}
+
+.comment_list {
+	position: relative;
+	margin-top: 50px;
+	margin_left: 200px;
+	width: 500px;
+	height: auto;
+	border: 1px solid black;
+	/* background-color: yellow; */
+	
+}
+
+/* =============== Footer Section =============== */
+
+/* footer 텍스트 */
+.footer {
+	width: 1200px;
+	color: #023059;
+}
+
+#bottomIcon {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#icon1 {
+	vertical-align: bottom;
+}
+
+#icon2 {
+	vertical-align: bottom;
+}
+
+.info1 {
+	width: 600px;
+	float: left;
+}
+
+.info2 {
+	width: 500px;
+	float: right;
+	text-align: right;
+}

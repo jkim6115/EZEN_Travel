@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ezentravel.DTO.MapDTO;
-import com.ezentravel.DTO.UserDTO;
+import com.ezentravel.DTO.UsDTO;
 
 @Repository
 public class MapDaoImp implements MapDao{
@@ -47,7 +47,7 @@ public class MapDaoImp implements MapDao{
 		return sqlSession.selectList("map.map_tagList", tag_num);
 	}
 	
-	public int user_insert(UserDTO userDTO) {
-		return sqlSession.insert("user.user_insert", userDTO);
+	public int user_insert(UsDTO usDTO) {
+		return sqlSession.insert("user.user_insert", usDTO);
 	}
 }

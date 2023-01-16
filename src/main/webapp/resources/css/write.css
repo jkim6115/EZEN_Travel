@@ -1,0 +1,261 @@
+/* 글씨체 */
+@import
+	url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap")
+	;
+
+/* ========= 공통 설정 ========= */
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Poor Story";
+	background-color: #e9f8ff;
+}
+
+li {
+	float: left;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.et {
+	width: 1600px;
+	margin: 0 auto;
+}
+
+.header {
+	margin-top: 0;
+	width: 1340px;
+	height: 400px;
+	background-color: #47bae7;
+}
+
+/* blind 숨김 설정 */
+.blind {
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	top: -99999px;
+	position: absolute;
+	overflow: hidden;
+}
+
+/* 우측상단 로그인 */
+.login {
+	width: 230px;
+	height: 0px;
+	float: right;
+}
+
+.login_list li {
+	margin-left: 9px;
+	margin-top: 17px;
+	display: inline;
+	font-size: 20px;
+	position: relative;
+}
+
+.login_button {
+	background: linear-gradient(to bottom, #8aa0b8 5%, #476e9e 100%);
+	background-color: #8aa0b8;
+	border-radius: 28px;
+	border: 1px solid #4e6096;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 13px;
+	padding: 4px 15px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #2b3e70;
+}
+
+.login_button:hover {
+	background: linear-gradient(to bottom, #476e9e 5%, #8aa0b8 100%);
+	background-color: #476e9e;
+}
+
+.login_button:active {
+	position: relative;
+	top: 1px;
+}
+
+/* 중앙 로고배너 이미지 */
+.logo {
+	margin-top: -21px;
+	margin-left: 520px;
+	width: 300px;
+	height: 340px;
+}
+
+/* 상단 카테고리 */
+.category {
+	width: 370px;
+	height: 35px;
+	text-align: center;
+	display: inline-block;
+	background-color: #1a5d97;
+	margin-left: 485px;
+}
+
+.category_list {
+	width: 500px;
+	margin: auto;
+}
+
+.category_list a {
+	color: #fffaed;
+}
+
+.category_list li {
+	font-size: 15px;
+	margin: 7px 38px;
+}
+
+/* =============== Content Section =============== */
+
+/* content_wrap */
+.content_section {
+	position: relative;
+	width: 1340px;
+	height: 1240px;
+	margin: 0 auto;
+	background-color: #d3e9fc;
+}
+
+.content_section header {
+	height: 50px;
+	width: 1300px;
+	margin-left: 20px;
+	padding-top: 100px;
+	margin-bottom: 50px;
+}
+
+.content_head {
+	position: relative;
+}
+
+.head_fr {
+	float: left;
+}
+
+.head_fr h2 {
+	padding-top: 35px;
+	font-size: 30px;
+	margin-left: 100px;
+}
+
+/* 취소, 등록 버튼 */
+.head_btn {
+	float: right;
+	margin-top: 60px;
+	margin-right: 100px;
+}
+
+.head_btn #cancel {
+	width: 70px;
+	height: 40px;
+	font-size: 17px;
+	border: 2px solid #29367c;
+	text-align: center;
+	background-color: #29367c;
+	color: #fff;
+	cursor: pointer;
+}
+
+.head_btn #update {
+	width: 70px;
+	height: 40px;
+	font-size: 17px;
+	border: 2px solid #29367c;
+	text-align: center;
+	background-color: #fff;
+	color: #29367c;
+	cursor: pointer;
+}
+
+/* 글쓰기 콘텐츠 구문 */
+.content_wrap {
+	margin-top: 60px;
+}
+
+.content_wrap form {
+	border-top: 5px solid #023059;
+	border-left: 2px solid #8aa0b8;
+	border-bottom: 2px solid #8aa0b8;
+	border-right: 2px solid #8aa0b8;
+	width: 1100px;
+	height: 760px;
+	margin-left: 120px;
+	margin-top: 50px;
+}
+
+.content_tb {
+	margin-top: 30px;
+	width: 1000px;
+}
+
+.subject_frm {
+	width: 900px;
+}
+
+.subject_frm td {
+	display: block;
+}
+
+.subject_frm #subject {
+	width: 900px;
+	margin-left: 100px;
+	height: 35px;
+	font-size: 15px;
+}
+
+.content_frm {
+	display: block;
+	margin-top: 30px;
+	margin-left: 100px;
+}
+
+.content_frm #content {
+	width: 900px;
+	height: 600px;
+	font-size: 15px;
+}
+/* =============== Footer Section =============== */
+
+/* footer 텍스트 */
+.footer {
+	width: 1200px;
+	color: #023059;
+}
+
+#bottomIcon {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#icon1 {
+	vertical-align: bottom;
+}
+
+#icon2 {
+	vertical-align: bottom;
+}
+
+.info1 {
+	width: 600px;
+	float: left;
+}
+
+.info2 {
+	width: 500px;
+	float: right;
+	text-align: right;
+}

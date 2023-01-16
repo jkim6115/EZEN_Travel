@@ -51,7 +51,7 @@
         </div>
         <div class="et logo">
           <!--중앙로고배너-->
-          <a href="#" class="logo_img">
+          <a href="" class="logo_img">
             <img src="resources/image/logo.png" alt="로고" />
           </a>
         </div>

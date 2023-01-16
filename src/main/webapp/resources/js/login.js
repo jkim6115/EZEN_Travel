@@ -29,14 +29,14 @@ function kakaoLogin() {
         success: (res) => {
           const kakao_account = res.kakao_account;
           
-          let id = res.id;
+          let user_num = res.id;
           let email = res.kakao_account.email;
           let gender = res.kakao_account.gender;
           let nickname = res.kakao_account.profile.nickname;
           let profile = res.kakao_account.profile.thumbnail_image_url;
           let age_range = res.kakao_account.age_range;
           
-	      $('#form-kakao-login input[name=id]').val(id);				
+	      $('#form-kakao-login input[name=id]').val(user_num);				
 		  $('#form-kakao-login input[name=email]').val(email);
 		  $('#form-kakao-login input[name=gender]').val(gender);
 		  $('#form-kakao-login input[name=nickname]').val(nickname);

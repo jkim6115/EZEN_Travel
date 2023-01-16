@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ezentravel.DAO.MapDaoImp;
 import com.ezentravel.DTO.MapDTO;
-import com.ezentravel.DTO.UserDTO;
+import com.ezentravel.DTO.UsDTO;
 
 //http://localhost:8090/controller/mainmap.do
 //http://localhost:8090/controller/rankmap.do
@@ -67,9 +67,15 @@ public class MapController {
 		
 		@ResponseBody
 		@PostMapping("/login.do")
-		public ModelAndView login_process(@ModelAttribute UserDTO userDTO) {
+		public ModelAndView login_process(@ModelAttribute UsDTO usDTO) {
 			ModelAndView mv = new ModelAndView("redirect://mainmap.do");
-			dao.user_insert(userDTO);
+			try {
+				dao.user_insert(usDTO);
+			} catch (org.springframework.dao.DuplicateKeyException e) {
+				System.out.println(e.getClass());
+				return mv;
+			}
+			
 			return mv;
 		}
 }
