@@ -53,14 +53,14 @@
         </div>
         <div class="et logo">
           <!--중앙로고배너-->
-          <a href="" class="logo_img">
+          <a href="./mainmap.do" class="logo_img">
             <img src="resources/image/logo.png" alt="로고" />
           </a>
         </div>
         <div class="category"><!-- 카테고리 전체 div -->
           <ul class="category_list"><!-- 카테고리 리스트 ul -->
             <li><a href="./board.do" class="category_button">E.T 광장</a></li>
-            <li><a href="#" class="category_button">E.T 소개</a></li>
+            <li><a href="./intro.do" class="category_button">E.T 소개</a></li>
           </ul>
         </div>
       </header>

@@ -80,7 +80,11 @@ public class MapController {
 				System.out.println(e.getClass());
 				return mv;
 			}
-			
 			return mv;
+		}
+		
+		@RequestMapping(value = "/intro.do", method = RequestMethod.GET)
+		public String intro_process() {
+			return "/intro";
 		}
 }
