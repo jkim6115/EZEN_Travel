@@ -2,6 +2,8 @@ package com.ezentravel.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -72,8 +74,9 @@ public class MapController {
 		
 		@ResponseBody
 		@PostMapping("/login.do")
-		public ModelAndView login_process(@ModelAttribute UsDTO usDTO) {
+		public ModelAndView login_process(@ModelAttribute UsDTO usDTO, HttpSession httpSession) {
 			ModelAndView mv = new ModelAndView("redirect://mainmap.do");
+			httpSession.setAttribute("login", usDTO);
 			
 			int result = dao.user_select(usDTO);
 

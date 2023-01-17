@@ -2,6 +2,8 @@ package com.ezentravel.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +35,8 @@ public class BoardController {
 
 	// 페이지 리스트 메서드
 	@RequestMapping("/board.do")
-	public ModelAndView list(PageDTO pv, ModelAndView mav) {
+	public ModelAndView list(PageDTO pv, ModelAndView mav, HttpSession httpSession) {
+		System.out.println(httpSession.getAttribute("login"));
 		// 페이지 카운트 및 현재 페이지 확인
 		int totalRecord = service.countProcess(pv);
 		if (totalRecord >= 1) {
@@ -80,7 +83,6 @@ public class BoardController {
 	// 게시글 작성 메서드
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST)
 	public String writePro(Cm_boardDTO dto) {
-		
 		service.wirteProcess(dto);
 		
 		// 작성 후 다시 board로 돌아오게끔 설정
