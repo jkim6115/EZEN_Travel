@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,49 +26,8 @@
   </head>
   <body>
     <div class="view_main"><!-- 메인페이지 전체 div-->
-      <header class="et header"><!-- 헤더 -->
-        <div class="login"><!-- 카테고리 전체 div -->
-          <ul class="login_list"><!-- 카테고리 리스트 ul -->
-            <li><a class="login_button" href="javascript:kakaoLogin()"><img src="resources/image/로그인.png"
-              />로그인</a>
-					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-					<script src="resources/js/login.js"></script></li>
-					
-			<li><a class="logout_button" href="javascript:kakaoLogout()"><img src="resources/image/로그아웃.png"
-              />로그아웃</a>
-					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-					<script src="resources/js/logout.js"></script></li>
+      <div id="login"><tiles:insertAttribute name="login" /></div>
 
-			<li><a class="secession_button" href="javascript:secession()"><img src="resources/image/회원탈퇴.png"
-              />회원탈퇴</a>
-					<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-					<script src="resources/js/secession.js"></script></li>
-          </ul>
-          <form id="form-kakao-login" method="post" action="/controller/login.do">
-		  		<input type="hidden" name="user_num"/>
-		    	<input type="hidden" name="nickname"/>
-		    	<!-- <input type="hidden" name="email"/>
-		    	<input type="hidden" name="gender"/>
-		    	<input type="hidden" name="age_range"/>
-		    	<input type="hidden" name="profile"/>  -->
-		  </form>
-		  <form  id="form-kakao-secession" method="post" action="/controller/secession.do">
-		  	<input type="hidden" name="user_num"/>
-		  </form>
-        </div>
-        <div class="et logo">
-          <!--중앙로고배너-->
-          <a href="./mainmap.do" class="logo_img">
-            <img src="resources/image/logo.png" alt="로고" />
-          </a>
-        </div>
-        <div class="category"><!-- 카테고리 전체 div -->
-          <ul class="category_list"><!-- 카테고리 리스트 ul -->
-            <li><a href="./board.do" class="category_button">E.T 광장</a></li>
-            <li><a href="./intro.do" class="category_button">E.T 소개</a></li>
-          </ul>
-        </div>
-      </header>
       <div class="trand_slide_box">
         <!-- 슬라이드와 텍스트를 담는 박스 -->
         <p id="trand_slide_title">인기 여행지 추천</p>
@@ -192,15 +153,9 @@
           </ol>
         </div>
       </section>
-      <footer class="et footer">
-        <!-- 풋터 -->
-        <div class="et info">
-          <p>법인명(상호) : ezentravel</p>
-          <p>
-            Copyright © ezentravel. All rights reserved. Hosting by cafe24 corp.
-          </p>
-        </div>
-      </footer>
+      
+      <div id="footer"><tiles:insertAttribute name="footer" /></div>
+      
     </div>
     <div class="ocean">
       <!-- 바다 출력 div -->

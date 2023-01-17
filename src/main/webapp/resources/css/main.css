@@ -218,6 +218,7 @@ a {
 
 /* 슬라이드 각 li */
 .trand_slide_list li {
+	color: #015871;
   width: 226px;
 
   text-align: center;

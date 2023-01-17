@@ -1,165 +1,245 @@
-/* 글씨체 */
-@import
-	url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap")
-	;
+/* �۾�ü */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-/* ========= 공통 설정 ========= */
-html, body {
-	margin: 0;
-	padding: 0;
-	font-family: "Poor Story";
-	background-color: #e9f8ff;
+/* ================ ���� ���� ================ */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Jua';
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 234, 1) 0%,
+    rgba(255, 252, 240, 1) 35%,
+    #b7e8eb 100%
+  );
+}
+
+/* ��ũ�� ������ */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.view_main {
+  position: relative;
+  z-index: 3;
 }
 
 li {
-	float: left;
+  float: left;
 }
 
 ul {
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
+/* ��� ������ �ʿ��� �κ� */
 .et {
-	width: 1600px;
-	margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
-.header {
-	margin-top: 0;
-	width: 1340px;
-	height: 400px;
-	background-color: #47bae7;
+/*=============================================*/
+
+/*=============== �ٵ� �ִϸ��̼� ================*/
+/* �ĵ����̺� �� ���ǹڽ� */
+.ocean {
+  height: 500px;
+  width: 2000px;
+  margin-left: -10px;
+  position: relative;
+  left: 0;
+  bottom: 500px;
+  background: #015871;
+  z-index: 1;
 }
 
-/* blind 숨김 설정 */
-.blind {
-	visibility: hidden;
-	width: 0px;
-	height: 0px;
-	font-size: 0px;
-	top: -99999px;
-	position: absolute;
-	overflow: hidden;
+/*�ٵ� �ĵ����̺� ����*/
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
 }
 
-/* 우측상단 로그인 */
-.login {
-	width: 230px;
-	height: 0px;
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+/*====================================================*/
+
+/*=========== ���(�ΰ�, �α��� �� ī�װ�) ============*/
+
+.er {
+  width: 940px;
+  height: 430px;
+}
+
+/* �α��� ����Ʈ */
+.login_list {
 	float: right;
 }
 
-.login_list li {
-	margin-left: 9px;
-	margin-top: 17px;
-	display: inline;
-	font-size: 20px;
-	position: relative;
+.login_list li{
+	width: 40px;
+	margin-left: 10px;
 }
 
-.login_button {
-	background: linear-gradient(to bottom, #8aa0b8 5%, #476e9e 100%);
-	background-color: #8aa0b8;
-	border-radius: 28px;
-	border: 1px solid #4e6096;
-	display: inline-block;
-	cursor: pointer;
-	color: #ffffff;
-	font-size: 13px;
-	padding: 4px 15px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #2b3e70;
+.login_list li img {
+	width: 40px;
+	height: 40px;
 }
 
-.login_button:hover {
-	background: linear-gradient(to bottom, #476e9e 5%, #8aa0b8 100%);
-	background-color: #476e9e;
+.login_list li p {
+	margin-top: -10px;
+	margin-left: 6px;
+	color: #015871;
 }
 
-.login_button:active {
-	position: relative;
-	top: 1px;
-}
 
-/* 중앙 로고배너 이미지 */
-.logo {
-	margin-top: -21px;
-	margin-left: 520px;
-	width: 300px;
-	height: 340px;
-}
-
-/* 상단 카테고리 */
+/* Ŀ�´�Ƽ, �Ұ� ī�װ�*/
 .category {
-	width: 370px;
-	height: 35px;
-	text-align: center;
-	display: inline-block;
-	background-color: #1a5d97;
-	margin-left: 485px;
+  width: 260px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: rgba(236, 231, 211, 0.5);
+  border-radius: 20px;
 }
 
-.category_list {
-	width: 500px;
-	margin: auto;
-}
-
-.category_list a {
-	color: #fffaed;
+.category_list{
+	margin-left: 30px;
 }
 
 .category_list li {
-	font-size: 15px;
-	margin: 7px 38px;
+	color: red;
+	width: 100px;
+	height: 30px;
+  display: inline;
+  margin-top: 5px;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.category_list li a{
+		color: rgb(1, 88, 113);
+
+	}
+
+
+.category_list li:hover {
+  background-color: rgb(228, 217, 203);
+}
+
+
+/* �ΰ��� */
+.logo {
+  width: 300px;
+  height: 340px;
 }
 
 /* =============== Content Section =============== */
 
 /* content_wrap */
-.content_section {
+.update_wrap form {
+	border-top: 5px solid #023059;
+	border-left: 2px solid #8aa0b8;
+	border-bottom: 2px solid #8aa0b8;
+	border-right: 2px solid #8aa0b8;
 	position: relative;
-	width: 1340px;
-	height: 1240px;
+	width: 1100px;
+	height: 760px;
 	margin: 0 auto;
-	background-color: #d3e9fc;
 }
 
-.content_section header {
+.update_wrap {
+	width: 950px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.update_head {
+	margin-top: 50px;
+	margin-left: 80px;
+}
+
+.content_section {
+	position: relative;
+	width: 1100px;
+	height: 760px;
+	margin-left: 150px;
+	margin-top:100px;
+}
+
+.content_section er {
 	height: 50px;
-	width: 1300px;
-	margin-left: 20px;
+	width: 1100px;
 	padding-top: 100px;
 	margin-bottom: 50px;
 }
 
-.content_head {
+.content_ {
 	position: relative;
 }
 
-.head_fr {
+._fr {
 	float: left;
 }
 
-.head_fr h2 {
+._fr h2 {
 	padding-top: 35px;
 	font-size: 30px;
-	margin-left: 100px;
+
 }
 
 /* 취소, 등록 버튼 */
-.head_btn {
+._btn {
 	float: right;
 	margin-top: 60px;
 	margin-right: 100px;
 }
 
-.head_btn #cancel {
+._btn #cancel {
 	width: 70px;
 	height: 40px;
 	font-size: 17px;
@@ -170,7 +250,7 @@ a {
 	cursor: pointer;
 }
 
-.head_btn #update {
+._btn #update {
 	width: 70px;
 	height: 40px;
 	font-size: 17px;
@@ -181,21 +261,18 @@ a {
 	cursor: pointer;
 }
 
+.update_btn {
+	margin-top: 50px;
+	margin-right: 70px;
+	float: right;
+}
+
 /* 글쓰기 콘텐츠 구문 */
 .content_wrap {
 	margin-top: 60px;
 }
 
-.content_wrap form {
-	border-top: 5px solid #023059;
-	border-left: 2px solid #8aa0b8;
-	border-bottom: 2px solid #8aa0b8;
-	border-right: 2px solid #8aa0b8;
-	width: 1100px;
-	height: 760px;
-	margin-left: 120px;
-	margin-top: 50px;
-}
+
 
 .content_tb {
 	margin-top: 30px;
@@ -212,7 +289,6 @@ a {
 
 .subject_frm #subject {
 	width: 900px;
-	margin-left: 100px;
 	height: 35px;
 	font-size: 15px;
 }
@@ -220,42 +296,39 @@ a {
 .content_frm {
 	display: block;
 	margin-top: 30px;
-	margin-left: 100px;
 }
 
-.content_frm #content {
-	width: 900px;
-	height: 600px;
+#frm {
+	margin-right: 154px;
+}
+
+#content {
+	width: 950px;
+	height: 500px;
 	font-size: 15px;
+	margin: 0 auto;
 }
-/* =============== Footer Section =============== */
 
-/* footer 텍스트 */
+.update_main {
+	width: 950px;
+	height: 500px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+/* ================ ǲ��(����) ===============*/
 .footer {
-	width: 1200px;
-	color: #023059;
+  width: 1200px;
+  height: 300px;
+  color: rgb(255, 252, 240);
 }
 
-#bottomIcon {
-	font-size: 15px;
-	font-weight: bold;
+.info {
+
+  width: 500px;
+margin: 0 auto;
+margin-top: 200px;
+  text-align: center;
 }
 
-#icon1 {
-	vertical-align: bottom;
-}
 
-#icon2 {
-	vertical-align: bottom;
-}
-
-.info1 {
-	width: 600px;
-	float: left;
-}
-
-.info2 {
-	width: 500px;
-	float: right;
-	text-align: right;
-}
+/*====================================================*/

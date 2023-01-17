@@ -1,14 +1,30 @@
-/* 글씨체 */
-@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+/* �۾�ü */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-/* ========= 공통 설정 ========= */
+/* ================ ���� ���� ================ */
 html,
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poor Story";
-  background-color: #e9f8ff;
+  width: 100%;
+  height: 100%;
+  font-family: 'Jua';
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 234, 1) 0%,
+    rgba(255, 252, 240, 1) 35%,
+    #b7e8eb 100%
+  );
 }
+
+/* ��ũ�� ������ */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.view_main {
+  position: relative;
+  z-index: 3;
+}
+
 li {
   float: left;
 }
@@ -19,22 +35,150 @@ ul {
   list-style-type: none;
 }
 
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
 }
 
+/* ��� ������ �ʿ��� �κ� */
 .et {
-  width: 1600px;
+  width: 1200px;
   margin: 0 auto;
 }
 
-.header {
-  margin-top: 0;
-  width: 1340px;
-  height: 400px;
-  background-color: #47bae7;
+/*=============================================*/
+
+/*=============== �ٵ� �ִϸ��̼� ================*/
+/* �ĵ����̺� �� ���ǹڽ� */
+.ocean {
+  height: 500px;
+  width: 2000px;
+  margin-left: -10px;
+  position: relative;
+  left: 0;
+  bottom: 500px;
+  background: #015871;
+  z-index: 1;
 }
 
+/*�ٵ� �ĵ����̺� ����*/
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+/*====================================================*/
+
+/*=========== ���(�ΰ�, �α��� �� ī�װ�) ============*/
+
+.header {
+  width: 940px;
+  height: 430px;
+}
+
+/* �α��� ����Ʈ */
+.login_list {
+	float: right;
+}
+
+.login_list li{
+	width: 40px;
+	margin-left: 10px;
+}
+
+.login_list li img {
+	width: 40px;
+	height: 40px;
+}
+
+.login_list li p {
+	margin-top: -10px;
+	margin-left: 6px;
+	color: #015871;
+}
+
+
+/* Ŀ�´�Ƽ, �Ұ� ī�װ�*/
+.category {
+  width: 260px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: rgba(236, 231, 211, 0.5);
+  border-radius: 20px;
+}
+
+.category_list{
+	margin-left: 30px;
+}
+
+.category_list li {
+	color: red;
+	width: 100px;
+	height: 30px;
+  display: inline;
+  margin-top: 5px;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.category_list li a{
+		color: rgb(1, 88, 113);
+
+	}
+
+
+.category_list li:hover {
+  background-color: rgb(228, 217, 203);
+}
+
+
+/* �ΰ��� */
+.logo {
+  width: 300px;
+  height: 340px;
+}
+
+/* =============== Community Section =============== */
 /* blind 숨김 설정 */
 .blind {
   visibility: hidden;
@@ -45,85 +189,12 @@ a {
   position: absolute;
   overflow: hidden;
 }
-
-/* 우측상단 로그인 */
-.login {
-  width: 230px;
-  height: 0px;
-  float: right;
-}
-
-.login_list li {
-  margin-left: 9px;
-  margin-top: 17px;
-  display: inline;
-  font-size: 20px;
-  position: relative;
-}
-
-.login_button {
-  background: linear-gradient(to bottom, #8aa0b8 5%, #476e9e 100%);
-  background-color: #8aa0b8;
-  border-radius: 28px;
-  border: 1px solid #4e6096;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 13px;
-  padding: 4px 15px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #2b3e70;
-}
-.login_button:hover {
-  background: linear-gradient(to bottom, #476e9e 5%, #8aa0b8 100%);
-  background-color: #476e9e;
-}
-.login_button:active {
-  position: relative;
-  top: 1px;
-}
-
-/* 중앙 로고배너 이미지 */
-.logo {
-  margin-top: -21px;
-  margin-left: 520px;
-  width: 300px;
-  height: 340px;
-}
-
-/* 상단 카테고리 */
-.category {
-  width: 370px;
-  height: 35px;
-  text-align: center;
-  display: inline-block;
-  background-color: #1a5d97;
-  margin-left: 485px;
-}
-
-.category_list {
-  width: 500px;
-
-  margin: auto;
-}
-.category_list a {
-  color: #fffaed;
-}
-
-.category_list li {
-  font-size: 15px;
-  margin: 7px 38px;
-}
-
-/* =============== Community Section =============== */
-
 /* community_wrap */
 .commu_section {
   position: relative;
-  width: 1340px;
-  height: 1240px;
+  width: 890px;
+  height: 940px;
   margin: 0 auto;
-  background-color: #d3e9fc;
 }
 
 .commu_wrap {
@@ -196,8 +267,8 @@ a {
 fieldset {
   display: block;
   border: none;
-  width: 700px;
-  margin-left: 290px;
+  margin-left: 170px;
+  margin-top: 50px;
 }
 
 .commu_search_wrap {
@@ -229,7 +300,6 @@ fieldset {
 
 /* 검색 기능 */
 .commu_search {
-  float: right;
   width: 500px;
 }
 
@@ -262,33 +332,21 @@ fieldset {
   color: #fff;
   cursor: pointer;
 }
-/* =============== Footer Section =============== */
+/*====================================================*/
 
-/* footer 텍스트 */
+/* ================ ǲ��(����) ===============*/
 .footer {
   width: 1200px;
-  color: #023059;
+  height: 300px;
+  color: rgb(255, 252, 240);
 }
 
-#bottomIcon {
-  font-size: 15px;
-  font-weight: bold;
-}
+.info {
 
-#icon1 {
-  vertical-align: bottom;
-}
-#icon2 {
-  vertical-align: bottom;
-}
-
-.info1 {
-  width: 600px;
-  float: left;
-}
-
-.info2 {
   width: 500px;
-  float: right;
-  text-align: right;
+margin: 0 auto;
+margin-top: 200px;
+  text-align: center;
 }
+
+/*====================================================*/

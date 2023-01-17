@@ -75,7 +75,7 @@ public class MapController {
 		@ResponseBody
 		@PostMapping("/login.do")
 		public ModelAndView login_process(@ModelAttribute UsDTO usDTO, HttpSession httpSession) {
-			ModelAndView mv = new ModelAndView("redirect://mainmap.do");
+			ModelAndView mv = new ModelAndView("redirect:/mainmap.do");
 			httpSession.setAttribute("login", usDTO);
 			
 			int result = dao.user_select(usDTO);
@@ -91,7 +91,7 @@ public class MapController {
 		@ResponseBody
 		@PostMapping("/secession.do")
 		public ModelAndView secession_process(@ModelAttribute UsDTO usDTO) {
-			ModelAndView mv = new ModelAndView("redirect://mainmap.do");
+			ModelAndView mv = new ModelAndView("redirect:/mainmap.do");
 			
 			dao.user_delete(usDTO);
 			return mv;

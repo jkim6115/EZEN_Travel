@@ -45,31 +45,37 @@ function cancelRun(){
 </script>
 </head>
 <body>
-	<!-- 헤더 영역 -->
-	<header class="et header">
-		<div class="et login">
-			<!--우측상단탭-->
-			<ul class="login_list">
-				<li><a href="#" class="login_button">로그인</a></li>
-			</ul>
-		</div>
-
-		<div class="et logo">
-			<!--중앙로고배너-->
-			<h1 class="logo_img">
-				<a href="./mainmap.do"> <img src="resources/image/logo.png" alt="로고" />
-				</a>
-			</h1>
-		</div>
-		<div class="et category">
-			<!--하단카테고리-->
-			<ul class="category_list">
-				<li><a href="#">태그필터</a></li>
-				<li><a href="#">커뮤니티</a></li>
-				<li><a href="#">소개</a></li>
-			</ul>
-		</div>
-	</header>
+	 <div class="view_main"><!-- 메인페이지 전체 div-->
+      <header class="et header"><!-- 헤더 -->
+        <div class="category"><!-- 카테고리 전체 div -->
+          <ul class="category_list"><!-- 카테고리 리스트 ul -->
+            <li><a class="login_button" href="javascript:kakaoLogin()">로그인</a>
+		    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+			<script src="resources/js/login.js"></script></li>
+          </ul>
+          <form id="form-kakao-login" method="post" action="/controller/login.do">
+		  		<input type="hidden" name="user_num"/>
+		    	<input type="hidden" name="nickname"/>
+		    	<!-- <input type="hidden" name="email"/>
+		    	<input type="hidden" name="gender"/>
+		    	<input type="hidden" name="age_range"/>
+		    	<input type="hidden" name="profile"/> -->
+		  </form>
+		  
+        </div>
+        <div class="et logo">
+          <!--중앙로고배너-->
+          <a href="./mainmap.do" class="logo_img">
+            <img src="resources/image/logo.png" alt="로고" />
+          </a>
+        </div>
+        <div class="category"><!-- 카테고리 전체 div -->
+          <ul class="category_list"><!-- 카테고리 리스트 ul -->
+            <li><a href="./board.do" class="category_button">E.T 광장</a></li>
+            <li><a href="./intro.do" class="category_button">E.T 소개</a></li>
+          </ul>
+        </div>
+ </header>
 <!-- 섹션 영역 -->
 	<section class="et content_section">
 	<!-- 게시글 수정 -->
@@ -91,33 +97,22 @@ function cancelRun(){
 			</form>
 		</div>
 	</section>
-<!-- footer -->
-	<footer class="et footer">
-		<div class="et info1">
-			<h4>고객센터</h4>
-			<h4>070-4795-4042</h4>
-			<div id="bottomText">
-				<p>월요일 ~ 금요일 / 10:00 - 17:00</p>
-				<p>점심시간 12:00 - 13:00</p>
-				<p>주말 및 공휴일 휴무</p>
-			</div>
-			<div id="bottomIcon">
-				<p>
-					<img src=resources/image/final_footer01.png alt="01" id="icon1">
-					플러스 친구 : ezen_travel
-				</p>
-				<p>
-					<img src=resources/image/final_footer02.png alt="02" id="icon2">
-					인스타그램 : ezen_travel
-				</p>
-			</div>
-		</div>
-		<div class="et info2">
-			<p>법인명(상호) : ezentravel</p>
-			<br />
-			<p>Copyright © ezentravel. All rights reserved. Hosting by cafe24
-				corp.</p>
-		</div>
-	</footer>
+<footer class="et footer">
+        <!-- 풋터 -->
+        <div class="et info">
+          <p>법인명(상호) : ezentravel</p>
+          <p>
+            Copyright © ezentravel. All rights reserved. Hosting by cafe24 corp.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <div class="ocean">
+      <!-- 바다 출력 div -->
+      <div class="wave"></div>
+      <!-- 바다 웨이브 출력 div -->
+      <div class="wave"></div>
+      <!-- 입체적효과 위해 웨이브 1개 추가 -->
+    </div>
 </body>
 </html>
