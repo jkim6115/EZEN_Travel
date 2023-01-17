@@ -13,4 +13,5 @@ public interface MapDao {
 	public List<MapDTO> tag_list(int tag_num);
 	
 	public int user_insert(UsDTO usDTO);
+	public int user_select(UsDTO usDTO);
 }

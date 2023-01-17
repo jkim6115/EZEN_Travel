@@ -50,4 +50,14 @@ public class MapDaoImp implements MapDao{
 	public int user_insert(UsDTO usDTO) {
 		return sqlSession.insert("user.user_insert", usDTO);
 	}
+	
+	@Override
+	public int user_select(UsDTO usDTO) {
+		int result = sqlSession.selectOne("user.user_select", usDTO);
+		return result;
+	}
+	
+	public int user_delete(UsDTO usDTO) {
+		return sqlSession.delete("user.user_delete", usDTO);
+	}
 }

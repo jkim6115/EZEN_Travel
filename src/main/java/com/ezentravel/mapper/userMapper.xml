@@ -7,6 +7,14 @@
 <mapper namespace="user">
 	<insert id="user_insert" parameterType="com.ezentravel.DTO.UsDTO">
 		INSERT INTO us (user_num, nickname)
-		VALUES ( #{user_num}, #{nickname})
+		VALUES ( ${user_num}, #{nickname})
 	</insert>
+	
+	<select id="user_select" parameterType="com.ezentravel.DTO.UsDTO"  resultType="int">
+		select count(*) from us where user_num = ${user_num}
+	</select>
+	
+	<delete id="user_delete" parameterType="com.ezentravel.DTO.UsDTO">
+		delete from us where user_num = ${user_num}
+	</delete>
 </mapper> 

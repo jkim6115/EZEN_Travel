@@ -73,14 +73,26 @@ public class MapController {
 		@ResponseBody
 		@PostMapping("/login.do")
 		public ModelAndView login_process(@ModelAttribute UsDTO usDTO) {
-			ModelAndView mv = new ModelAndView("redirect:/mainmap.do");
-			try {
+			ModelAndView mv = new ModelAndView("redirect://mainmap.do");
+			
+			int result = dao.user_select(usDTO);
+
+			if (result == 0) {
 				dao.user_insert(usDTO);
-			} catch (org.springframework.dao.DuplicateKeyException e) {
-				System.out.println(e.getClass());
+				return mv;
+			} else {
 				return mv;
 			}
+		}
+		
+		@ResponseBody
+		@PostMapping("/secession.do")
+		public ModelAndView secession_process(@ModelAttribute UsDTO usDTO) {
+			ModelAndView mv = new ModelAndView("redirect://mainmap.do");
+			
+			dao.user_delete(usDTO);
 			return mv;
+		
 		}
 		
 		@RequestMapping(value = "/intro.do", method = RequestMethod.GET)

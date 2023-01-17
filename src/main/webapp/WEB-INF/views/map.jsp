@@ -43,12 +43,15 @@
 					<script src="resources/js/secession.js"></script></li>
           </ul>
           <form id="form-kakao-login" method="post" action="/controller/login.do">
-		  		<input type="hidden" name="id"/>
+		  		<input type="hidden" name="user_num"/>
 		    	<input type="hidden" name="nickname"/>
-		    	<input type="hidden" name="email"/>
+		    	<!-- <input type="hidden" name="email"/>
 		    	<input type="hidden" name="gender"/>
 		    	<input type="hidden" name="age_range"/>
-		    	<input type="hidden" name="profile"/>
+		    	<input type="hidden" name="profile"/>  -->
+		  </form>
+		  <form  id="form-kakao-secession" method="post" action="/controller/secession.do">
+		  	<input type="hidden" name="user_num"/>
 		  </form>
         </div>
         <div class="et logo">
