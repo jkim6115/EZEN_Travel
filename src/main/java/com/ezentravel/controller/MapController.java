@@ -97,7 +97,6 @@ public class MapController {
 			
 			dao.user_delete(usDTO);
 			return mv;
-		
 		}
 		
 		@RequestMapping(value = "/intro.do", method = RequestMethod.GET)

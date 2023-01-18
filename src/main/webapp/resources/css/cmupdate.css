@@ -185,7 +185,6 @@ a {
 	width: 1340px;
 	height: 1240px;
 	margin: 0 auto;
-	background-color: #d3e9fc;
 }
 
 .content_section header {
@@ -194,6 +193,10 @@ a {
 	margin-left: 20px;
 	padding-top: 100px;
 	margin-bottom: 50px;
+}
+
+.comment_update_wrap {
+	margin: 100px 520px;
 }
 
 .content_head {

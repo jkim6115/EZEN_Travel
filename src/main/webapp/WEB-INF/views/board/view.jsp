@@ -153,7 +153,7 @@
 							value="${currentPage}" />
 						<c:set var="user" value="${cdto.user_num}" />
 						<%-- 로그인을 한 사람에게만 수정 버튼과 삭제 버튼이 표시되도록 한다. --%>
-						<c:if test="${cdto.user_num == gdto.user_num}">
+						<c:if test="${cdto.user_num == sessionScope.user_num}">
 						<input type="button" id="modify" value="수정" /> 
 						<input type="button" id="delete" value="삭제" />
 						</c:if>
@@ -162,10 +162,14 @@
 					<div class="content_info">
 						<!-- 게시글 본문 -->
 						<div class="content_head">
-							<span class="title">${cdto.title}</span> 
-							<span class="writer">${cdto.nickname}</span>
-							<span class="content_date">${cdto.create_date}</span> 
-							<span class="readcount">조회수 ${cdto.readcount}</span>
+							<div class="title">
+								<span>${cdto.title}</span>
+							</div>
+							<div class="content_wr_info">
+								<span class="writer">&#91 작성자 : ${cdto.nickname} &#93</span>
+								<span class="content_date">${cdto.create_date}</span> 
+								<span class="readcount">조회수 ${cdto.readcount}</span>
+							</div>
 						</div>
 						<div class="content_main">
 							<p>${cdto.content}</p>
@@ -187,8 +191,13 @@
 							<div class="comment_info">
 								<form name="frm2" id="frm2">
 									<div class="comment_wr_info">
-										<p>작성자 ${cmdto.nickname}</p>
-										<div class="comment_wr_date">${cmdto.comment_date}</div>
+										<span class="comment_wr_nick">&#91 ${cmdto.nickname} &#93</span>
+										<span class="comment_wr_date">${cmdto.comment_date}</span>
+										<%-- 댓글을 작성한 유저에게만 보이도록 수정, 삭제 버튼이 표시되게 한다. --%>
+										<c:if test="${cmdto.user_num == sessionScope.user_num}">
+											<input type="button" class="cm_modify" value="수정" /> 
+											<input type="button" class="cm_delete" value="삭제" />
+										</c:if>
 									</div>
 									<div class="comment_contents">${cmdto.board_comment}</div>
 									<div class="comment_btn">
@@ -198,12 +207,6 @@
 										<input type="hidden" name="board_comment" value="${cmdto.board_comment}" /> 
 										<input type="hidden" name="user_num" value="${cmdto.user_num}" /> 
 										<input type="hidden" name="comment_group" value="${cmdto.comment_group}" />
-										<%-- 댓글을 작성한 유저에게만 보이도록 수정, 삭제 버튼이 표시되게 한다. --%>
-										<c:if test="${cmdto.user_num == gdto.user_num}">
-										<input type="button" class="cm_modify" value="수정" /> 
-										<input type="button" class="cm_delete" value="삭제" />
-										</c:if>
-
 									</div>
 								</form>
 							</div>
@@ -216,14 +219,13 @@
 					<div class="comment_wr_info">
 						<form name="frm3" id="frm3">
 							<div class="comment_wrbox">
-								<p>
-									<textarea name="board_comment" rows="4" cols="40" class="cm_bx" style="resize: none"></textarea>
-								</p>
+								<span>
+									<textarea name="board_comment" class="cm_bx" style="resize: none"></textarea>
+								</span>
 								<input type="button" class="cm_up" value="댓글 등록" /> 
 								<input type="hidden" name="currentPage" value="${currentPage}" /> 
 								<input type="hidden" name="bno" value="${cdto.bno}" />
-								<input type="hidden" name="user_num" value="${gdto.user_num}" />
-								
+								<input type="hidden" name="user_num" value="${sessionScope.user_num}" />
 							</div>
 						</form>
 					</div>
