@@ -126,8 +126,8 @@
 	<!-- 댓글 작성 -->
 	<insert id="comment_wr" parameterType="com.ezentravel.DTO.Cm_commentDTO">
 	insert into cm_comment
-	(cno, board_comment, comment_group, comment_date, user_num, bno)
-	values(cm_comment_cno_seq.nextval, #{board_comment, jdbcType = VARCHAR}, cm_comment_cno_seq.nextval, sysdate, ${user_num}, #{bno})
+	(cno, board_comment, comment_date, user_num, bno)
+	values(cm_comment_cno_seq.nextval, #{board_comment, jdbcType = VARCHAR}, sysdate, ${user_num}, #{bno})
 	</insert>
 	
 	<!-- 댓글 수정 -->
