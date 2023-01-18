@@ -81,7 +81,7 @@ public class MapController {
 			httpSession.setAttribute("nickname", usDTO.getNickname());
 			
 			int result = dao.user_select(usDTO);
-
+			System.out.println(result);
 			if (result == 0) {
 				dao.user_insert(usDTO);
 				return mv;

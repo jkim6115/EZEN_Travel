@@ -1,116 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="resources/css/cmpupdate.css" />
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	/* 수정 및 취소 버튼 */
-	$('#update').bind('click', updateRun);
-	$('#cancel').bind('click', cancelRun);
-	
-	// 기존의 게시글을 수정하기 위해 <br/> 구문을 \n으로 재설정 한다.
-	$('[name=board_comment]').val($('[name=board_comment]').val().trim());
-	$('[name=board_comment]').val($('[name=board_comment]').val().replace(/<br\s?\/?>/g, "\n")); 
-});
-
-function updateRun() {
-	var update = confirm('수정하시겠습니까?');
-	if(update){
-		// yes
-		alert('수정되었습니다.')
-		// 게시글 수정 시 엔터 값을 <br/>로 받기 위해 재설정 한다.
-		$('[name=board_comment]').val($('[name=board_comment]').val().replace(/\n/gi, '<br/>'));
-		$('#frm').attr('action', 'comment_up.do').submit();
-	} else {
-		// no
-	}
-}
-
-function cancelRun(){
-	var result = confirm('취소하시겠습니까?');
-	if (result) {
-		//yes
-		alert('취소되었습니다.')
-		history.go(-1);
-	} else {
-		//no
-	}
-}
-</script>
+<%@include file="/WEB-INF/views/head/commonHead.jsp"%>
+<%@include file="/WEB-INF/views/head/cmupdateHead.jsp"%>
 </head>
 <body>
-	 <div class="view_main"><!-- 메인페이지 전체 div-->
-      <header class="et header"><!-- 헤더 -->
-        <div class="category"><!-- 카테고리 전체 div -->
-          <ul class="category_list"><!-- 카테고리 리스트 ul -->
-            <li><a class="login_button" href="javascript:kakaoLogin()">로그인</a>
-		    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-			<script src="resources/js/login.js"></script></li>
-          </ul>
-          <form id="form-kakao-login" method="post" action="/controller/login.do">
-		  		<input type="hidden" name="user_num"/>
-		    	<input type="hidden" name="nickname"/>
-		    	<!-- <input type="hidden" name="email"/>
-		    	<input type="hidden" name="gender"/>
-		    	<input type="hidden" name="age_range"/>
-		    	<input type="hidden" name="profile"/> -->
-		  </form>
-		  
-        </div>
-        <div class="et logo">
-          <!--중앙로고배너-->
-          <a href="./mainmap.do" class="logo_img">
-            <img src="resources/image/logo.png" alt="로고" />
-          </a>
-        </div>
-        <div class="category"><!-- 카테고리 전체 div -->
-          <ul class="category_list"><!-- 카테고리 리스트 ul -->
-            <li><a href="./board.do" class="category_button">E.T 광장</a></li>
-            <li><a href="./intro.do" class="category_button">E.T 소개</a></li>
-          </ul>
-        </div>
- </header>
-<!-- 섹션 영역 -->
-<section class="et content_section">
-	<!-- 댓글 수정 -->
-		<div class="comment_update_wrap">
-			<form name="frm" id="frm" method="post">
-				<div class="comment_main">
-					<textarea rows="13" cols="40" name="board_comment" id="board_comment">${dto.board_comment}</textarea>
+	<!-- 메인페이지 전체 div-->
+	<div class="view_main">
+
+		<!-- 로그인/로그아웃 전환 -->
+		<c:choose>
+			<c:when test="${empty sessionScope.id}">
+				<div id="login">
+					<tiles:insertAttribute name="login" />
 				</div>
-				<div class="update_btn">
-				    <input type="hidden" name="user_num" value="${dto.user_num}" />
-					<input type="hidden" name="cno" value="${dto.cno}" />
-					<input type="hidden" name="bno" value="${dto.bno}" />
-					<input type="hidden" name="currentPage" value="${currentPage}" />
-					<input type="hidden" name="comment_group" value="${dto.comment_group}" />									
-					<input type="button" id="update" value="수정" />
-					<input type="button" id="cancel" value="취소" />
+			</c:when>
+			<c:otherwise>
+				<div id="logout">
+					<tiles:insertAttribute name="logout" />
 				</div>
-			</form>
+			</c:otherwise>
+		</c:choose>
+
+		<!-- 섹션 영역 -->
+		<section class="et content_section">
+			<!-- 댓글 수정 -->
+			<div class="comment_update_wrap">
+				<form name="frm" id="frm" method="post">
+					<div class="comment_main">
+						<textarea rows="13" cols="40" name="board_comment"
+							id="board_comment">${dto.board_comment}</textarea>
+					</div>
+					<div class="update_btn">
+						<input type="hidden" name="user_num" value="${dto.user_num}" /> <input
+							type="hidden" name="cno" value="${dto.cno}" /> <input
+							type="hidden" name="bno" value="${dto.bno}" /> <input
+							type="hidden" name="currentPage" value="${currentPage}" /> <input
+							type="hidden" name="comment_group" value="${dto.comment_group}" />
+						<input type="button" id="update" value="수정" /> <input
+							type="button" id="cancel" value="취소" />
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<!-- 푸터 -->
+		<div id="footer">
+			<tiles:insertAttribute name="footer" />
 		</div>
-	</section>
- <footer class="et footer">
-        <!-- 풋터 -->
-        <div class="et info">
-          <p>법인명(상호) : ezentravel</p>
-          <p>
-            Copyright © ezentravel. All rights reserved. Hosting by cafe24 corp.
-          </p>
-        </div>
-      </footer>
-    </div>
-    <div class="ocean">
-      <!-- 바다 출력 div -->
-      <div class="wave"></div>
-      <!-- 바다 웨이브 출력 div -->
-      <div class="wave"></div>
-      <!-- 입체적효과 위해 웨이브 1개 추가 -->
-    </div>
+	</div>
+
+	<!-- 바다 출력 div -->
+	<div class="ocean">
+		<!-- 바다 웨이브 출력 div -->
+		<div class="wave"></div>
+		<!-- 입체적효과 위해 웨이브 1개 추가 -->
+		<div class="wave"></div>
+	</div>
 </body>
 </html>

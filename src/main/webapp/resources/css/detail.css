@@ -1,290 +1,99 @@
-/* 글씨체 */
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-
-/* ================ 공통 설정 ================ */
-html,
-body {
-  width: 100%;
-  height: 100%;
-  font-family: 'Jua';
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 254, 234, 1) 0%,
-    rgba(255, 252, 240, 1) 35%,
-    #b7e8eb 100%
-  );
-}
-
-/* 스크롤 가리기 */
-::-webkit-scrollbar {
-  display: none;
-}
-
-.view_main {
-  position: relative;
-  z-index: 3;
-}
-
-li {
-  float: left;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-ol {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* 가운데 정렬이 필요한 부분 */
-.et {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-/*=============================================*/
-
-/*=============== 바디 애니메이션 ================*/
-/* 파도웨이브 밑 오션박스 */
-.ocean {
-  height: 500px;
-  width: 2000px;
-  margin-left: -10px;
-  position: relative;
-  left: 0;
-  bottom: 500px;
-  background: #015871;
-  z-index: 1;
-}
-
-/*바디 파도웨이브 설정*/
-.wave {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
-    repeat-x;
-  position: absolute;
-  top: -198px;
-  width: 6400px;
-  height: 198px;
-  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-  transform: translate3d(0, 0, 0);
-  z-index: 2;
-}
-
-.wave:nth-of-type(2) {
-  top: -175px;
-  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
-    swell 7s ease -1.25s infinite;
-  opacity: 1;
-}
-
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -1600px;
-  }
-}
-
-@keyframes swell {
-  0%,
-  100% {
-    transform: translate3d(0, -25px, 0);
-  }
-  50% {
-    transform: translate3d(0, 5px, 0);
-  }
-}
-
-/*====================================================*/
-
-/*=========== 헤더(로고, 로그인 등 카테고리) ============*/
-
-.header {
-  width: 940px;
-  height: 430px;
-}
-
-.login_list {
-	float: right;
-}
-
-.login_list li{
-	width: 40px;
-	margin-left: 10px;
-}
-
-.login_list li img {
-	width: 40px;
-	height: 40px;
-}
-
-.login_list li p {
-	margin-top: -10px;
-	margin-left: 6px;
-	color: #015871;
-}
-
-/* 로그인 등 카테고리*/
-.category {
-  width: 260px;
-  height: 40px;
-  margin: 0 auto;
-  background-color: rgba(236, 231, 211, 0.5);
-  border-radius: 20px;
-}
-
-.category_list{
-	margin-left: 30px;
-}
-
-.category_list li {
-  color: red;
-  width: 100px;
-  height: 30px;
-  display: inline;
-  margin-top: 5px;
-  font-size: 20px;
-  position: relative;
-  text-align: center;
-  border-radius: 20px;
-}
-
-.category_list li a{
-		color: rgb(1, 88, 113);
-
-	}
-
-
-.category_list li:hover {
-  background-color: rgb(228, 217, 203);
-}
-
-/* 로고배너 */
-.logo {
-  width: 300px;
-  height: 340px;
-}
+@charset "UTF-8";
 
 /* =============== 섹션 =============== */
 
 /* detail_section */
 .detail_section {
-  position: relative;
-  width: 1340px;
-  height: 1340px;
-  margin: 0 auto;
-  /*background-color: #d3e9fc;*/
+	position: relative;
+	width: 1340px;
+	height: 1340px;
+	margin: 0 auto;
+	/*background-color: #d3e9fc;*/
 }
 
 /* detail_box */
 .detail_box {
-  float: left;
-  width: 1340px;
-  height: 1320px;
-  margin-top: 50px;
+	float: left;
+	width: 1340px;
+	height: 1320px;
+	margin-top: 50px;
 }
 
 /* detail_img */
 #detail_img {
-  margin: 0 auto;
-  width: 920px;
-  height: 620px;
+	margin: 0 auto;
+	width: 920px;
+	height: 620px;
 }
 
-#detail_img > img {
+#detail_img>img {
 	width: 920px;
-  height: 620px;
+	height: 620px;
 }
 
 /* slide btn  */
-.slide_btn_box > button {
-  position: relative;
-  top: 60%;
-  margin-top: -45px;
-  width: 40px;
-  height: 40px;
-  font-size: 12px;
-  color: white;
-  background-color: #023059;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
+.slide_btn_box>button {
+	position: relative;
+	top: 60%;
+	margin-top: -45px;
+	width: 40px;
+	height: 40px;
+	font-size: 12px;
+	color: white;
+	background-color: #023059;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
 }
 
-.slide_btn_box > .slide_btn_prev {
-  display: block;
-  top: -250px;
-  left: 100px;
+.slide_btn_box>.slide_btn_prev {
+	display: block;
+	top: -250px;
+	left: 100px;
 }
 
-.slide_btn_box > .slide_btn_next {
-  display: block;
-  top: -250px;
-  right: -1170px;
+.slide_btn_box>.slide_btn_next {
+	display: block;
+	top: -250px;
+	right: -1170px;
 }
 
-.slide_btn_box > .slide_btn_prev:hover {
-  background-color: #347ebf;
+.slide_btn_box>.slide_btn_prev:hover {
+	background-color: #347ebf;
 }
 
-.slide_btn_box > .slide_btn_next:hover {
-  background-color: #347ebf;
+.slide_btn_box>.slide_btn_next:hover {
+	background-color: #347ebf;
 }
 
 /* detail_src */
 #detail_src {
 	padding: 20px;
-  width: 900px;
-  height: 300px;
-  margin-top: 50px;
-  margin-left: 200px;
-  border: 1px solid black;
-  font-size: 20px;
-  overflow: scroll;
+	width: 900px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: 200px;
+	border: 1px solid black;
+	font-size: 20px;
+	overflow: scroll;
 }
 
-#detail_src > h4 {
+#detail_src>h4 {
 	margin-top: -10px;
 }
 
 #detail_web {
 	padding: 20px;
-  width: 900px;
-  height: 100px;
-  margin-top: 10px;
-  margin-left: 200px;
-  border: 1px solid black;
-  font-size: 20px;
+	width: 900px;
+	height: 100px;
+	margin-top: 10px;
+	margin-left: 200px;
+	border: 1px solid black;
+	font-size: 20px;
 }
 
-#detail_web > h4 {
+#detail_web>h4 {
 	margin-top: -10px;
-}
-
-/*====================================================*/
-
-/* ================ 풋터(정보) ===============*/
-.footer {
-  width: 1200px;
-  height: 300px;
-  color: rgb(255, 252, 240);
-}
-
-.info {
-  width: 500px;
-  margin: 0 auto;
-  margin-top: 200px;
-  text-align: center;
 }
 
 /*====================================================*/
