@@ -1,0 +1,352 @@
+/* �۾�ü */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* ================ ���� ���� ================ */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Jua';
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 234, 1) 0%,
+    rgba(255, 252, 240, 1) 35%,
+    #b7e8eb 100%
+  );
+}
+
+/* ��ũ�� ������ */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.view_main {
+  position: relative;
+  z-index: 3;
+}
+
+li {
+  float: left;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ��� ������ �ʿ��� �κ� */
+.et {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/*=============================================*/
+
+/*=============== �ٵ� �ִϸ��̼� ================*/
+/* �ĵ����̺� �� ���ǹڽ� */
+.ocean {
+  height: 500px;
+  width: 2000px;
+  margin-left: -10px;
+  position: relative;
+  left: 0;
+  bottom: 500px;
+  background: #015871;
+  z-index: 1;
+}
+
+/*�ٵ� �ĵ����̺� ����*/
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+/*====================================================*/
+
+/*=========== ���(�ΰ�, �α��� �� ī�װ�) ============*/
+
+.header {
+  width: 940px;
+  height: 430px;
+}
+
+/* �α��� ����Ʈ */
+.login_list {
+	float: right;
+}
+
+.login_list li{
+	width: 40px;
+	margin-left: 10px;
+}
+
+.login_list li img {
+	width: 40px;
+	height: 40px;
+}
+
+.login_list li p {
+	margin-top: -10px;
+	margin-left: 6px;
+	color: #015871;
+}
+
+
+/* Ŀ�´�Ƽ, �Ұ� ī�װ�*/
+.category {
+  width: 260px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: rgba(236, 231, 211, 0.5);
+  border-radius: 20px;
+}
+
+.category_list{
+	margin-left: 30px;
+}
+
+.category_list li {
+	color: red;
+	width: 100px;
+	height: 30px;
+  display: inline;
+  margin-top: 5px;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.category_list li a{
+		color: rgb(1, 88, 113);
+
+	}
+
+
+.category_list li:hover {
+  background-color: rgb(228, 217, 203);
+}
+
+
+/* �ΰ��� */
+.logo {
+  width: 300px;
+  height: 340px;
+}
+
+/* =============== Community Section =============== */
+/* blind 숨김 설정 */
+.blind {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  font-size: 0px;
+  top: -99999px;
+  position: absolute;
+  overflow: hidden;
+}
+/* community_wrap */
+.commu_section {
+  position: relative;
+  width: 890px;
+  height: 940px;
+  margin: 0 auto;
+}
+
+.commu_wrap {
+  width: 1300px;
+  height: 1220px;
+  padding-top: 50px;
+  margin-left: 20px;
+}
+
+/* community_box */
+.commu_btnbox {
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+
+#commu_wr {
+  float: right;
+  width: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #29367c;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+#commu_wr:hover {
+  background-color: #29367c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.commu_box {
+  width: 1200px;
+  margin: 10px 50px;
+  border-top: 1px solid #29367c;
+  border-bottom: 1px solid #29367c;
+}
+
+#commu_head {
+  background-color: #cee1f2;
+}
+
+#commu_info {
+  background-color: #e9f8ff;
+  border-top: 1px solid #29367c;
+}
+
+/* community_list */
+.commu_page_wrap {
+  margin-left: 400px;
+}
+.commu_page_box > a,
+.commu_page_box > span {
+  display: inline-block;
+  margin: 10px 20px;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #000;
+}
+
+.commu_page_box > a:hover,
+.commu_page_box span:hover {
+  text-decoration-line: underline;
+}
+
+/* Community search */
+fieldset {
+  display: block;
+  border: none;
+  margin-left: 170px;
+  margin-top: 50px;
+}
+
+.commu_search_wrap {
+  position: relative;
+}
+
+#search_type {
+  width: 100px;
+  height: 27px;
+  vertical-align: middle;
+  float: left;
+  margin-left: 70px;
+  border: 2px solid #29367c;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #fff;
+  /* background: transparent; */
+}
+
+.select_area .inner {
+  float: left;
+}
+
+.commu_search_wrap section {
+  display: none;
+  position: relative;
+  float: left;
+}
+
+/* 검색 기능 */
+.commu_search {
+  width: 500px;
+}
+
+/* 검색 창 */
+.inner_search .inner_keyword {
+  width: 400px;
+  height: 20px;
+  float: left;
+  border: 2px solid #29367c;
+  padding: 1px;
+}
+
+/* 검색 버튼 */
+#commu_search_btn {
+  float: right;
+  width: 50px;
+  height: 25px;
+  margin-right: 35px;
+  border: 2px solid #29367c;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+#commu_search_btn {
+  vertical-align: 50px;
+}
+
+#commu_search_btn:hover {
+  background-color: #29367c;
+  color: #fff;
+  cursor: pointer;
+}
+/*====================================================*/
+
+/* ================ ǲ��(����) ===============*/
+.footer {
+  width: 1200px;
+  height: 300px;
+  color: rgb(255, 252, 240);
+}
+
+.info {
+
+  width: 500px;
+margin: 0 auto;
+margin-top: 200px;
+  text-align: center;
+}
+
+/*====================================================*/

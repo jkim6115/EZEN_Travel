@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+	<!-- 페이지 카운트 -->
+	<!-- 검색 기능 추가 및 검색 후 기능 설정 -->
+	<select id="count" resultType="int" parameterType="com.ezentravel.DTO.PageDTO">
+		select count(*)
+		from cm_board a, us b
+		<where>
+			a.user_num = b.user_num
+			<choose>
+				<when test="searchKey=='search_all'">
+					and a.title || a.content like '%' || #{searchWord} || '%'
+				</when>
+				<when test="searchKey=='search_title'">
+					and a.title like '%' || #{searchWord} || '%'
+				</when>
+				<when test="searchKey=='search_content'">
+					and a.content like '%' || #{searchWord} || '%'
+				</when>
+				<when test="searchKey=='search_writer'">
+					and b.nickname like '%' || #{searchWord} || '%'
+				</when>
+			</choose>
+		</where>
+	</select>
+	
+	<!-- 페이지 리스트 -->
+	<!-- 검색 기능 추가 및 검색 기능 설정 -->
+	<select id="list" parameterType="com.ezentravel.DTO.PageDTO" resultType="com.ezentravel.DTO.GeneralDTO">
+		select b.*
+		from (
+			  select rownum as rm, a.*
+			  from (
+			  		select cb.bno, cb.title, cb.readcount, cb.create_date, cb.content, cb.user_num, u.nickname
+			  		from cm_board cb, us u
+			  		<where>
+			  			cb.user_num = u.user_num
+			  			<choose>
+			  				<when test="searchKey=='search_all'">
+			  					and cb.title || cb.content like '%' || #{searchWord} || '%'
+			  				</when>
+			  				<when test="searchKey=='search_title'">
+			  					and cb.title like '%' || #{searchWord} || '%'
+			  				</when>
+			  				<when test="searchKey=='search_content'">
+			  					and cb.content like '%' || #{searchWord} || '%'
+			  				</when>
+			  				<when test="searchKey=='search_writer'">
+			  					and u.nickname like '%' || #{searchWord} || '%'
+			  				</when>
+			  			</choose>
+			  		</where>
+			  		<![CDATA[
+			  		order by cb.bno desc
+			  		) a
+			  	) b
+		where b.rm >= #{startRow} and b.rm <= #{endRow} 
+			  		]]>		
+	</select>
+	
+	<!-- 조회수 -->
+	<update id="readCount" parameterType="int">
+		update cm_board
+		set readcount = readcount + 1
+		where bno = #{bno}
+	</update>
+	
+	<!-- 게시글 뷰 -->
+	<select id="board_view" parameterType="int" resultType="com.ezentravel.DTO.GeneralDTO">
+		select b.*, a.nickname
+		from us a, cm_board b
+		where a.user_num = b.user_num
+		and b.bno = #{bno}
+	</select>
+	
+	<!-- 게시글 작성 -->
+	<insert id="write" parameterType="com.ezentravel.DTO.GeneralDTO">
+		insert into cm_board(bno, title, content, user_num, readcount, create_date)
+		values(cm_board_bno_seq.nextval, #{title}, #{content}, ${user_num}, 0, sysdate)
+	</insert>
+	
+	<!-- 게시글 수정 -->
+	<update id="update" parameterType="com.ezentravel.DTO.Cm_boardDTO">
+		update cm_board
+		set title = #{title}, content = #{content, jdbcType=VARCHAR}, create_date = sysdate
+		where bno = #{bno}
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from cm_board
+		where bno = #{bno}
+	</delete>
+	
+	<!-- 댓글 총 개수 -->
+	<select id="comment_count" resultType="int" parameterType="com.ezentravel.DTO.GeneralDTO">
+		select count(b.cno)
+		from cm_board a, cm_comment b
+		where a.bno = b.bno
+		and b.bno = #{bno}
+	</select>
+	
+	<!-- 댓글 리스트 뷰 -->
+	<!-- 게시글 뷰에 댓글 표시용 (따로 dto 삽입 쿼리문) -->
+	<select id="comment_view" parameterType="int" resultType="com.ezentravel.DTO.GeneralDTO">
+		select c.*, a.nickname
+		from us a, cm_board b, cm_comment c
+		where a.user_num = c.user_num
+		and b.bno = c.bno
+		and c.bno = #{bno}
+		order by c.cno
+	</select>
+	
+	<!-- 댓글 선택 뷰 -->
+	<select id="comment_view_one" parameterType="int" resultType="com.ezentravel.DTO.Cm_commentDTO">
+		select a.*
+		from cm_comment a, cm_board b
+		where a.bno = b.bno
+		and a.cno = #{cno}
+	</select>
+	
+	<!-- 댓글 작성 -->
+	<insert id="comment_wr" parameterType="com.ezentravel.DTO.Cm_commentDTO">
+	insert into cm_comment
+	(cno, board_comment, comment_date, user_num, bno)
+	values(cm_comment_cno_seq.nextval, #{board_comment, jdbcType = VARCHAR}, sysdate, ${user_num}, #{bno})
+	</insert>
+	
+	<!-- 댓글 수정 -->
+	<update id="comment_up" parameterType="com.ezentravel.DTO.Cm_commentDTO">
+		update cm_comment
+		set board_comment = #{board_comment, jdbcType=VARCHAR}, comment_date = sysdate
+		where cno = #{cno}
+	</update>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="comment_del" parameterType="int">
+		delete from cm_comment
+		where cno = #{cno}
+	</delete>
+	
+</mapper>

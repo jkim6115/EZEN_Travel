@@ -1,0 +1,437 @@
+/* 글씨체 */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* ================ 공통 설정 ================ */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Jua';
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 234, 1) 0%,
+    rgba(255, 252, 240, 1) 35%,
+    #b7e8eb 100%
+  );
+}
+
+/* 스크롤 가리기 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.view_main {
+  position: relative;
+  z-index: 3;
+}
+
+li {
+  float: left;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 가운데 정렬이 필요한 부분 */
+.et {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/*=============================================*/
+
+/*=============== 바디 애니메이션 ================*/
+/* 파도웨이브 밑 오션박스 */
+.ocean {
+  height: 500px;
+  width: 2000px;
+  margin-left: -10px;
+  position: relative;
+  left: 0;
+  bottom: 500px;
+  background: #015871;
+  z-index: 1;
+}
+
+/*바디 파도웨이브 설정*/
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+/*====================================================*/
+
+/*=========== 헤더(로고, 로그인 등 카테고리) ============*/
+
+.header {
+  width: 940px;
+  height: 430px;
+}
+
+.login_list {
+	float: right;
+}
+
+.login_list li{
+	width: 40px;
+	margin-left: 10px;
+}
+
+.login_list li img {
+	width: 40px;
+	height: 40px;
+}
+
+.login_list li p {
+	margin-top: -10px;
+	margin-left: 6px;
+	color: #015871;
+}
+
+/* 로그인 등 카테고리*/
+.category {
+  width: 260px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: rgba(236, 231, 211, 0.5);
+  border-radius: 20px;
+}
+
+.category_list{
+	margin-left: 30px;
+}
+
+.category_list li {
+  color: red;
+  width: 100px;
+  height: 30px;
+  display: inline;
+  margin-top: 5px;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.category_list li a{
+		color: rgb(1, 88, 113);
+
+	}
+
+
+.category_list li:hover {
+  background-color: rgb(228, 217, 203);
+}
+
+/* 로고배너 */
+.logo {
+  width: 300px;
+  height: 340px;
+}
+
+/* 여행지 추천 전체 div */
+.trand_slide_box {
+  width: 930px;
+  height: 250px;
+  background-color: rgba(247, 242, 223, 0.5);
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+/* 여행지 추천 텍스트 타이틀 */
+#trand_slide_title {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  margin: 0px auto;
+  margin-bottom: 10px;
+  color: #015871;
+  font-weight: bold;
+}
+
+/* 슬라이드 전체 div */
+.trand_slide {
+  width: 930px;
+  height: 260px;
+  position: relative;
+  margin: 0px auto;
+  margin-top: -10px;
+  float: left;
+  overflow: hidden;
+}
+
+/* 슬라이드 ul */
+.trand_slide_list {
+  position: absolute;
+  left: -226px;
+  top: 0;
+  width: 2260px;
+  margin-left: 13px;
+}
+
+/* 슬라이드 각 li */
+.trand_slide_list li {
+	color: #015871;
+  width: 226px;
+
+  text-align: center;
+}
+
+.trand_slide_list li p {
+	margin-top: 5px;
+}
+
+/* 슬라이드 각 이미지 */
+.trand_slide_list li img {
+  width: 200px;
+  height: 150px;
+}
+
+/* 슬라이드 좌우버튼 */
+.trand_slide_controller span {
+  position: absolute;
+  color: black;
+  text-align: center;
+  padding: 10px 10px;
+  top: 20%;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.next {
+  right: 0px;
+}
+
+.next > img{
+	width: 30px;
+	height: 30px;
+}
+
+.prev > img{
+	width: 30px;
+	height: 30px;
+}
+
+/*====================================================*/
+
+/* ================ 섹션(필터, 지도, 리스트) ===============*/
+.section {
+  width: 980px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+/* 태그필터 전체 div */
+.tag_fillter {
+  width: 900px;
+  height: 55px;
+  text-align: center;
+  display: inline-block;
+  background-color: rgba(247, 242, 223, 0.5);
+  margin-left: 40px;
+  margin-bottom: 20px;
+  border-radius: 20px 20px 20px 20px / 15px 15px 15px 15px;
+}
+
+/* 태그필터 전체 ul */
+.tag_fillter_list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 태그필터 각 li */
+.tag_fillter_list li {
+  color: #015871;
+  display: flex;
+  font-size: 20px;
+  padding-top: 6px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 태그필터 각 li 마우스오버 */
+.tag_fillter_list li:hover {
+  background: rgb(228, 217, 203);
+}
+
+/* 태그필터 각 li 이미지 설정 */
+.tag_fillter_icon > img {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.tag_fillter_text {
+  display: none;
+  margin-left: 5px;
+  margin-right: 15px;
+  margin-top: -5px;
+}
+
+/* 이벤트 발생시(마우스오버) */
+.tag_fillter_active {
+  color: #015871;
+  background-color: rgb(228, 217, 203);
+}
+
+/* 태그필터 기본값 세팅 */
+.tag_fillter_active .tag_fillter_text {
+  display: block;
+}
+
+/* 지도 설정 */
+#map {
+  height: 510px;
+  width: 445px;
+  margin: 0 auto;
+}
+
+/* 지도를 감싸는 테두리 박스 */
+.map_box {
+  float: left;
+  width: 460px;
+  height: 515px;
+  padding-top: 8px;
+  margin-left: -2px;
+  background-color: rgba(255, 252, 240, 0.5);
+}
+
+/* 리스트 전체 div */
+.list_box {
+  width: 500px;
+  height: 525px;
+  background-color: rgba(255, 252, 240, 0.5);
+  margin-top: 0;
+  margin-left: 476px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+/* 리스트 전체 ul */
+.list_info {
+  width: 460px;
+  margin-left: 5px;
+  position: relative;
+  float: left;
+}
+
+/* 리스트 각 li */
+.list_info > li {
+  width: 448px;
+  height: 94px;
+  margin-top: 10px;
+  background-color: rgb(255, 250, 234);
+  overflow: hidden;
+}
+
+.list_info > li > a {
+  text-decoration: none;
+  color: #023059;
+}
+
+.list_info > li > a > img {
+  float: left;
+  margin-right: 10px;
+  width: 100px;
+  height: 94px;
+}
+
+.list_info > li > a > h4 {
+  margin-top: 7px;
+  margin-bottom: -7px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.list_info > li > a > p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 14px;
+}
+
+/* 상세페이지로 넘어가는 버튼 전체 ol */
+.list_button {
+  width: 30px;
+  position: relative;
+  float: left;
+  margin-left: -5px;
+}
+
+/* 상세페이지로 넘어가는 각 버튼 li */
+.list_button > li {
+  width: 30px;
+  height: 94px;
+  margin-top: 10px;
+}
+
+/*====================================================*/
+
+/* ================ 풋터(정보) ===============*/
+.footer {
+  width: 1200px;
+  height: 300px;
+  color: rgb(255, 252, 240);
+}
+
+.info {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 200px;
+  text-align: center;
+}
+
+/*====================================================*/

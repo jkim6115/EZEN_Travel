@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  DB 테이블명 : areas -->
+<mapper namespace="map">
+	<select id="map_list" parameterType="string" resultType="com.ezentravel.DTO.MapDTO">
+		<![CDATA[
+			select * from  (select * from areas order by dbms_random.random())
+			where rownum <= 50
+		]]> 
+	</select>
+	
+	<select id="map_rank" resultType="com.ezentravel.DTO.MapDTO">
+		<![CDATA[
+			SELECT *
+			FROM ( SELECT * FROM areas ORDER BY readcount DESC )
+			WHERE rownum <= 10
+		]]>
+	</select>
+	
+	<select id="map_detail" parameterType="int" resultType="com.ezentravel.DTO.MapDTO">
+		SELECT * FROM areas WHERE area_num = #{area_num}
+	</select>
+	
+	<update id="map_readcount" parameterType="int">
+		UPDATE areas SET readcount = readcount + 1 WHERE area_num = #{area_num}
+	</update>
+	
+	<select id="map_tagList" parameterType="int" resultType="com.ezentravel.DTO.MapDTO">
+		<![CDATA[
+			SELECT * FROM (
+				SELECT a.*
+				FROM AREAS a
+				INNER JOIN TAGS_AREAS ta ON a.AREA_NUM = ta.AREAS_AREA_NUM 
+				INNER JOIN TAGS t ON t.TAG_NUM = ta.TAGS_TAG_NUM 
+				WHERE t.TAG_NUM = #{tag_num} 
+				ORDER BY dbms_random.value
+			) WHERE rownum <= 50
+		]]>
+	</select>
+</mapper> 

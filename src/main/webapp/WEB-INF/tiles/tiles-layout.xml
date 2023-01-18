@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+  
+<tiles-definitions>
+    <definition name="default" template="/WEB-INF/views/map.jsp">
+		<put-attribute name="login" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/footer/footer.jsp"/>
+	</definition>
+	
+	 <definition name="top" template="/WEB-INF/views/main.jsp">
+		<put-attribute name="top" value=""/>
+		<put-attribute name="content" value="/WEB-INF/layout/include/content.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/footer/footer.jsp"/>
+  	 </definition>  
+	
+	  <definition name="/map" extends="default">
+		<put-attribute name="login" value="/WEB-INF/views/header/login.jsp" />
+	  </definition>
+	  
+	  <definition name="/intro" template="/WEB-INF/views/intro.jsp">
+		<put-attribute name="login" value="/WEB-INF/views/header/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/footer/footer.jsp"/>
+	  </definition>
+	  
+	  <definition name="/detail" template="/WEB-INF/views/detail.jsp">
+		<put-attribute name="login" value="/WEB-INF/views/header/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/footer/footer.jsp"/>
+	  </definition>
+	
+	 <definition name="main" extends="top">
+		<put-attribute name="top" value="/WEB-INF/layout/top_after.jsp"/>
+	 </definition>
+</tiles-definitions>
