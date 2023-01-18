@@ -51,9 +51,7 @@ table, tr, th, td {
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
 						// 현재 페이지 표시
 						// 현재 페이지는 굵은 글씨로 표시된다.
 						var page = $('span#page_list a');
@@ -81,6 +79,15 @@ table, tr, th, td {
 							$('[name=searchWord]').val('${pv.searchWord}');
 							$('[name=searchKey]').val('${pv.searchKey}');
 						}
+						
+						// 회원만 글쓸 수 있게끔 설정
+						$('#write').click(function(){
+							if(`${gdto.user_num}`!=""){
+								$('#frm_wr').submit();
+							}else{
+								alert('로그인 후 이용해주세요.');
+							}
+						});
 					});
 </script>
 </head>
@@ -123,14 +130,8 @@ table, tr, th, td {
 			<div class="board_btn">
 				<!-- 리스트 글쓰기 버튼 -->
 				<form id="frm_wr" name="frm_wr" method="get" action="write.do">
-					<c:if test="${user_num == null}">
-						<!-- 회원 정보 확인 후 글쓰기 이용 여부 표출 -->
-						<script type="text/javascript">
-							alert = "로그인 후 이용해 주세요";
-						</script>
-					</c:if>
-					<!-- 회원만 글을 쓸 수 있게끔 한다. (로그인 완료 후 다시 체크해야함) -->
-					<input type="submit" id="write" value="글쓰기" />
+						<input type="button" id="write" value="글쓰기" />
+						<input type="hidden" id="user_num" value="${gdto.user_num}" />
 				</form>
 			</div>
 			<!-- 게시판 리스트 출력 -->
@@ -161,6 +162,7 @@ table, tr, th, td {
 								<%-- 게시판 넘어가는 url 밸류값 --%>
 								<%-- 현재 페이지, 게시판 번호, 검색 키워드, 검색 단어 --%>
 								<c:url var="path" value="view.do">
+									<%-- <c:param name=""></c:param> --%>
 									<c:param name="currentPage" value="${pv.currentPage}" />
 									<c:param name="num" value="${dto.bno}" />
 									<c:param name="searchKey" value="${pv.searchKey}" />

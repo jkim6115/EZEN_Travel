@@ -99,18 +99,18 @@ $(document).ready(function(){
 				<div class="head_fi">
 					<h2>글쓰기</h2>
 				</div>
-				
-			</div>
-			<div class="content_main">
-				<div class="content_ti">
-					<input type="text" name="title" id="title" value="" placeholder="제목을 입력해 주세요." />
-				</div>
-				<div class="content_co">
-					<textarea cols="50" rows="20" name="content" id="content" style="resize:none" placeholder="내용을 입력해 주세요."></textarea>
-				</div>
 				<div class="head_btn">
 					<input type="button" id="cancel" value="취소" />
 					<input type="button" id="update" value="등록" />
+				</div>
+			</div>
+			<div class="content_main">
+				<div class="content_ti">
+					<input type="hidden" name="user_num" value="${gdto.user_num}" />
+					<input type="text" name="title" id="title" placeholder="제목을 입력해 주세요." />
+				</div>
+				<div class="content_co">
+					<textarea cols="50" rows="20" name="content" id="content" style="resize:none" placeholder="내용을 입력해 주세요."></textarea>
 				</div>
 			</div>
 		</form>

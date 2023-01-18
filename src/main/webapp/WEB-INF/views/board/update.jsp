@@ -90,7 +90,8 @@ function cancelRun(){
 				</div>
 				<div class="update_btn">
 					<input type="hidden" name="bno" value="${dto.bno}"/>
-					<input type="hidden" name="currentPage" value="${currentPage}" />	
+					<input type="hidden" name="currentPage" value="${currentPage}" />
+					<input type="hidden" name="user_num" value="${dto.user_num}" />
 					<input type="button" id="update" value="수정" />
 					<input type="button" id="cancel" value="취소" />
 				</div>

@@ -4,7 +4,7 @@ import java.sql.Date;
 
 // 종합 DTO
 public class GeneralDTO {
-	private int user_num; // 유저 번호
+	private String user_num; // 유저 번호
 	private int bno; // 게시판 번호
 	private String title; // 게시글 제목
 	private String content; // 게시글 본문
@@ -26,11 +26,11 @@ public class GeneralDTO {
 		this.readcount = readcount;
 	}
 
-	public int getUser_num() {
+	public String getUser_num() {
 		return user_num;
 	}
 
-	public void setUser_num(int user_num) {
+	public void setUser_num(String user_num) {
 		this.user_num = user_num;
 	}
 

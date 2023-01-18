@@ -78,9 +78,9 @@
 	</select>
 	
 	<!-- 게시글 작성 -->
-	<insert id="write" parameterType="com.ezentravel.DTO.Cm_boardDTO">
+	<insert id="write" parameterType="com.ezentravel.DTO.GeneralDTO">
 		insert into cm_board(bno, title, content, user_num, readcount, create_date)
-		values(cm_board_bno_seq.nextval, #{title}, #{content}, 1<!-- #{user_num} -->, 0, sysdate)
+		values(cm_board_bno_seq.nextval, #{title}, #{content}, ${user_num}, 0, sysdate)
 	</insert>
 	
 	<!-- 게시글 수정 -->
@@ -127,7 +127,7 @@
 	<insert id="comment_wr" parameterType="com.ezentravel.DTO.Cm_commentDTO">
 	insert into cm_comment
 	(cno, board_comment, comment_group, comment_date, user_num, bno)
-	values(cm_comment_cno_seq.nextval, #{board_comment, jdbcType = VARCHAR}, cm_comment_cno_seq.nextval, sysdate, 1<!-- #{user_num} -->, #{bno})
+	values(cm_comment_cno_seq.nextval, #{board_comment, jdbcType = VARCHAR}, cm_comment_cno_seq.nextval, sysdate, ${user_num}, #{bno})
 	</insert>
 	
 	<!-- 댓글 수정 -->

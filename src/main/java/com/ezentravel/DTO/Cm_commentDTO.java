@@ -10,15 +10,8 @@ public class Cm_commentDTO {
 	private int comment_step; // 댓글 단계 (쌓이는 순서)
 	private int comment_level; // 댓글 계층 (대댓글)
 	private Date comment_date; // 댓글 생성 날짜
-	private int user_num; // 댓글 유저 번호
+	private String user_num; // 댓글 유저 번호
 	private int bno; // 댓글 상위 게시판 번호
-	//private String nickname; // 닉네임
-	
-	/*
-	 * public String getNickname() { return nickname; }
-	 * 
-	 * public void setNickname(String nickname) { this.nickname = nickname; }
-	 */
 	
 	public int getCno() {
 		return cno;
@@ -68,11 +61,11 @@ public class Cm_commentDTO {
 		this.comment_date = comment_date;
 	}
 
-	public int getUser_num() {
+	public String getUser_num() {
 		return user_num;
 	}
 
-	public void setUser_num(int user_num) {
+	public void setUser_num(String user_num) {
 		this.user_num = user_num;
 	}
 

@@ -76,7 +76,9 @@ public class MapController {
 		@PostMapping("/login.do")
 		public ModelAndView login_process(@ModelAttribute UsDTO usDTO, HttpSession httpSession) {
 			ModelAndView mv = new ModelAndView("redirect:/mainmap.do");
-			httpSession.setAttribute("login", usDTO);
+			
+			httpSession.setAttribute("user_num", usDTO.getUser_num());
+			httpSession.setAttribute("nickname", usDTO.getNickname());
 			
 			int result = dao.user_select(usDTO);
 

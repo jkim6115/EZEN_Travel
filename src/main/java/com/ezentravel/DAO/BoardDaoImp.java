@@ -96,15 +96,12 @@ public class BoardDaoImp implements BoardDAO{
 	// 댓글 수정
 	@Override
 	public void updateComment(Cm_commentDTO dto) {
-		System.out.println(dto.getCno());
-		System.out.println(sqlSession.update("board.comment_up", dto));
 		sqlSession.update("board.comment_up", dto);
 	}
 	
 	// 댓글 삭제
 	@Override
 	public void deleteComment(int num) {
-		System.out.println(num);
 		sqlSession.delete("board.comment_del", num);
 	}
 }

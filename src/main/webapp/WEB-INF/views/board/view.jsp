@@ -77,27 +77,32 @@
 
 				// 댓글 등록
 				$('.cm_up').click(
-						function() {
-							if ($('.cm_bx').val() == "") {
-								alert('내용을 입력해주세요.');
-								$('.cm_bx').focus();
-								return false;
-							}
+						function() {	
+							if(`${gdto.user_num}`!=""){ 
+								if ($('.cm_bx').val() == "") {
+									alert('내용을 입력해주세요.');
+									$('.cm_bx').focus();
+									return false;
+								}
 
-							var up = confirm('댓글을 등록하시겠습니까?');
-							if (up) {
-								// yes
-								alert('댓글이 등록되었습니다.');
-								// 글 작성 시 엔터 값을 <br/>로 받기 위해 재설정을 한다.
-								$('textarea[name=board_comment]').val(
-										$('textarea[name=board_comment]').val()
-												.replace(/\n/gi, '<br/>'));
-								$('#frm3').attr('method', 'post');
-								$('#frm3').attr('action', 'comment_wr.do');
-								$('#frm3').submit();
+								var up = confirm('댓글을 등록하시겠습니까?');
+								if (up) {
+									// yes
+									alert('댓글이 등록되었습니다.');
+									// 글 작성 시 엔터 값을 <br/>로 받기 위해 재설정을 한다.
+									$('textarea[name=board_comment]').val(
+											$('textarea[name=board_comment]').val()
+													.replace(/\n/gi, '<br/>'));
+									$('#frm3').attr('method', 'post');
+									$('#frm3').attr('action', 'comment_wr.do');
+									$('#frm3').submit();
+								} else {
+									// no
+								}
 							} else {
-								// no
+								alert('로그인 후 이용해주세요.');
 							}
+							
 						});
 			});
 </script>
@@ -136,7 +141,6 @@
  </header>
 <!-- 섹션 영역 -->
 	<section class="et board_section">
-	<div class="board_box">
 		<!-- 뷰 기본 화면 -->
 		<div class="content_wrap">
 			<!-- 게시글 본문 뷰 -->
@@ -149,10 +153,10 @@
 							value="${currentPage}" />
 						<c:set var="user" value="${cdto.user_num}" />
 						<%-- 로그인을 한 사람에게만 수정 버튼과 삭제 버튼이 표시되도록 한다. --%>
-						<%-- <c:if test="${sessionScope.user == cdto.user_num}"> --%>
+						<c:if test="${cdto.user_num == gdto.user_num}">
 						<input type="button" id="modify" value="수정" /> 
 						<input type="button" id="delete" value="삭제" />
-						<%-- </c:if> --%>
+						</c:if>
 						<input type="button" id="list" value="목록" />
 					</div>
 					<div class="content_info">
@@ -170,7 +174,6 @@
 				</form>
 			</div>
 		</div>
-		
 		<!-- 댓글 -->
 		<div class="comment_wrap">
 			<div class="comment_view">
@@ -195,12 +198,11 @@
 										<input type="hidden" name="board_comment" value="${cmdto.board_comment}" /> 
 										<input type="hidden" name="user_num" value="${cmdto.user_num}" /> 
 										<input type="hidden" name="comment_group" value="${cmdto.comment_group}" />
-										<c:set var="user_cm" value="${cmdto.user_num}" />
 										<%-- 댓글을 작성한 유저에게만 보이도록 수정, 삭제 버튼이 표시되게 한다. --%>
-										<%-- <c:if test="${sessionScope.user_cm == cmdto.user_num }">	 --%>
+										<c:if test="${cmdto.user_num == gdto.user_num}">
 										<input type="button" class="cm_modify" value="수정" /> 
 										<input type="button" class="cm_delete" value="삭제" />
-										<%-- </c:if> --%>
+										</c:if>
 
 									</div>
 								</form>
@@ -220,13 +222,13 @@
 								<input type="button" class="cm_up" value="댓글 등록" /> 
 								<input type="hidden" name="currentPage" value="${currentPage}" /> 
 								<input type="hidden" name="bno" value="${cdto.bno}" />
-								<%-- <input type="text" name="user_num" value="${cdto.user_num}" /> --%>
+								<input type="hidden" name="user_num" value="${gdto.user_num}" />
+								
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 	</section>
 <footer class="et footer">
