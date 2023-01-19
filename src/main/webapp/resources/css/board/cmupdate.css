@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/* =============== Content Section =============== */
+
+/* content_wrap */
+.content_section {
+	position: relative;
+	width: 1340px;
+	height: 1240px;
+	margin: 0 auto;
+}
+
+.comment_update_wrap {
+	margin: 100px 520px;
+	width: auto;
+	height: auto;
+}
+
+.comment_main {
+	position: relative;
+	width: 400px;
+	height: 300px;
+	width: 400px;
+	height: 300px;
+	margin-left: -40px;
+}
+
+#board_comment {
+	width: 400px;
+	height: 300px;
+}
+
+/* 수정, 취소 버튼 */
+.update_btn {
+	width: 400px;
+	height: 100px;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+
+.update_btn input {
+	margin-right: 15px;
+}
+
+.update_btn #cancel {
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.update_btn #update {
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.update_btn #cancel:hover, .update_btn #update:hover {
+	background-color: #29367c;
+	color: #fff;
+	cursor: pointer;
+}
+
+/*====================================================*/

@@ -1,17 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Intro Page</title>
-</head>
-<link rel="stylesheet" href="resources/css/intro.css" />
+<%@include file="/WEB-INF/views/include/intro/introHead.jsp"%>
+
 <body>
 	<div class="view_main">
-	<div id="login"><tiles:insertAttribute name="login" /></div>
+	
+	<!-- 로그인/로그아웃 전환 -->
+		<c:choose>
+			<c:when test="${empty sessionScope.user_num}">
+				<div id="login">
+					<tiles:insertAttribute name="login" />
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div id="logout">
+					<tiles:insertAttribute name="logout" />
+				</div>
+			</c:otherwise>
+		</c:choose>
       
       <section>
       	<div id="wrap">
@@ -27,7 +38,10 @@
       	</div>
       </section>
       
-      <div id="footer"><tiles:insertAttribute name="footer" /></div>
+      <!-- 푸터 -->
+		<div id="footer">
+			<tiles:insertAttribute name="footer" />
+		</div>
       
      </div>
       <div class="ocean">

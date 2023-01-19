@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/* =============== Content Section =============== */
+.board_section {
+	position: relative;
+	width: 1200px;
+	height: 1000px;
+	margin: 0 auto;
+}
+
+.content_wrap, .comment_wrap {
+	width: 1200px;
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+.content_box {
+	width: 1000px;
+	height: auto;
+	background-color: rgba(247, 242, 223, 0.5);
+	border: solid 1px #29367c;
+	border-top: solid 6px #29367c;
+}
+
+.content_btn {
+	padding-top: 20px;
+	margin-left: 820px;
+}
+
+.content_btn>input {
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 15px;
+	text-align: center;
+}
+
+.content_btn>input:hover {
+	background-color: #29367c;
+	color: #fff;
+	cursor: pointer;
+}
+
+.content_info {
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-top: 2px solid #808080;
+}
+
+.title {
+	font-size: 30px;
+	margin: 10px 0;
+	border-bottom: 2px solid #808080;
+}
+
+.content_wr_info {
+	float: right;
+}
+
+.writer {
+	font-size: 20px;
+}
+
+.content_date, .readcount {
+	color: #5f5f5f;
+}
+
+.content_main {
+	clear: both;
+	font-size: 20px;
+}
+
+/* 하단 댓글 */
+.comment_list {
+	width: 1000px;
+	height: auto;
+}
+
+.comment_info {
+	border-top: 1px solid #5f5f5f;
+	padding-top: 10px;
+}
+
+.comment_wr_nick {
+	font-size: 20px;
+}
+
+.comment_wr_date {
+	color: #5f5f5f;
+}
+
+.cm_modify, .cm_delete {
+	width: 40px;
+	height: 25px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 12px;
+	text-align: center;
+	float: right;
+	margin-left: 10px;
+}
+
+.cm_modify:hover, .cm_delete:hover {
+	background-color: #29367c;
+	color: #fff;
+	cursor: pointer;
+}
+
+.comment_contents {
+	width: 1000px;
+	height: auto;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+.comment_wrbox {
+	width: 1000px;
+}
+
+.cm_bx {
+	width: 1000px;
+	height: 150px;
+}
+
+.cm_up {
+	width: 1006px;
+	height: 30px;
+	margin-top: -10px;
+	border: 1px solid #000;
+	background-color: #f7f7f7;
+	cursor: pointer;
+}
+
+/*====================================================*/
