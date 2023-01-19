@@ -44,9 +44,10 @@ $(document).ready(function () { //상세페이지 area_num에 해당된 데이�
     datatype: 'JSON',
     url: 'detail.do',
     success: function (data) {
+	  $('#detail_title').append('<h1>' + data.area_title + '</h1>')
       $('#detail_img').append('<img src="' + data.area_image + '"/>');
       $('#detail_src').append(
-        '<p><h4>관광지 소개</h4>' + data.area_overview + '</p>'
+        '<p>' + data.area_overview + '</p>'
       );
       $('#detail_web').append(
         '<p><h4>상세주소</h4>' + data.area_address1 + '</p>'

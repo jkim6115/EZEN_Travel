@@ -26,7 +26,9 @@
       <!-- 상세 정보 표시 -->
       <section class="et detail_section">
         <div class="detail_box">
+          <div id="detail_title"></div>
           <div id="detail_img"></div>
+          <h4 class="detail_info">관광지 소개</h4>
           <div class="slide_btn_box">
             <!-- jsp작성필요 -->
             <button type="button" class="slide_btn_prev">&lang;</button>
