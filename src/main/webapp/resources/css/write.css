@@ -181,7 +181,6 @@ a {
 
 /* content_wrap */
 #frm {
-	
 	position: relative;
 	margin: 0 auto;
 }
@@ -223,8 +222,8 @@ a {
 /* 취소, 등록 버튼 */
 .head_btn {
 	float: right;
-    margin-top: 7%;
-    margin-right: 6.5%;
+	margin-top: 7%;
+	margin-right: 6.5%;
 }
 
 .head_btn #cancel {
@@ -248,7 +247,7 @@ a {
 	background-color: #fff;
 	color: #29367c;
 	cursor: pointer;
-    border-radius: 10px;
+	border-radius: 10px;
 }
 
 /* 글쓰기 콘텐츠 구문 */
@@ -258,9 +257,9 @@ a {
 
 .content_wrap form {
 	border-top: 6px solid #29367C;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
 	width: 1100px;
 	height: 760px;
 	margin-left: 120px;
@@ -301,7 +300,7 @@ a {
 }
 
 .content_co {
-	margin-top:30px;
+	margin-top: 20px;
 	width: 956px;
 	height: 506px;
 }
@@ -310,6 +309,11 @@ a {
 	margin: 0 auto;
 	width: 956px;
 	height: 506px;
+}
+
+input#title {
+	width: 950px;
+	height: 30px;
 }
 /* ================ ǲ��(����) ===============*/
 .footer {

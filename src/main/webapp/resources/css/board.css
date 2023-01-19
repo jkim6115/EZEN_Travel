@@ -228,7 +228,8 @@ a {
 .board_box {
 	width: 950px;
 	margin-top: 10px;
-	margin-right: 100px; border-top : 1px solid #29367c;
+	margin-right: 100px;
+	border-top: 1px solid #29367c;
 	border-bottom: 1px solid #29367c;
 	border-top: 1px solid #29367c;
 }

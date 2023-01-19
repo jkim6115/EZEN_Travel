@@ -179,95 +179,95 @@ a {
 
 /* detail_section */
 .detail_section {
-  position: relative;
-  width: 1340px;
-  height: 1340px;
-  margin: 0 auto;
-  /*background-color: #d3e9fc;*/
+	position: relative;
+	width: 1340px;
+	height: 1340px;
+	margin: 0 auto;
+	/*background-color: #d3e9fc;*/
 }
 
 /* detail_box */
 .detail_box {
-  float: left;
-  width: 1340px;
-  height: 1320px;
-  margin-top: 50px;
+	float: left;
+	width: 1340px;
+	height: 1320px;
+	margin-top: 50px;
 }
 
 /* detail_img */
 #detail_img {
-  margin: 0 auto;
-  width: 920px;
-  height: 620px;
+	margin: 0 auto;
+	width: 920px;
+	height: 620px;
 }
 
-#detail_img > img {
+#detail_img>img {
 	width: 920px;
-  height: 620px;
+	height: 620px;
 }
 
 /* slide btn  */
-.slide_btn_box > button {
-  position: relative;
-  top: 60%;
-  margin-top: -45px;
-  width: 40px;
-  height: 40px;
-  font-size: 12px;
-  color: white;
-  background-color: #023059;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
+.slide_btn_box>button {
+	position: relative;
+	top: 60%;
+	margin-top: -45px;
+	width: 40px;
+	height: 40px;
+	font-size: 12px;
+	color: white;
+	background-color: #023059;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
 }
 
-.slide_btn_box > .slide_btn_prev {
-  display: block;
-  top: -250px;
-  left: 100px;
+.slide_btn_box>.slide_btn_prev {
+	display: block;
+	top: -250px;
+	left: 100px;
 }
 
-.slide_btn_box > .slide_btn_next {
-  display: block;
-  top: -250px;
-  right: -1170px;
+.slide_btn_box>.slide_btn_next {
+	display: block;
+	top: -250px;
+	right: -1170px;
 }
 
-.slide_btn_box > .slide_btn_prev:hover {
-  background-color: #347ebf;
+.slide_btn_box>.slide_btn_prev:hover {
+	background-color: #347ebf;
 }
 
-.slide_btn_box > .slide_btn_next:hover {
-  background-color: #347ebf;
+.slide_btn_box>.slide_btn_next:hover {
+	background-color: #347ebf;
 }
 
 /* detail_src */
 #detail_src {
 	padding: 20px;
-  width: 900px;
-  height: 300px;
-  margin-top: 50px;
-  margin-left: 200px;
-  border: 1px solid black;
-  font-size: 20px;
-  overflow: scroll;
+	width: 900px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: 200px;
+	border: 1px solid black;
+	font-size: 20px;
+	overflow: scroll;
 }
 
-#detail_src > h4 {
+#detail_src>h4 {
 	margin-top: -10px;
 }
 
 #detail_web {
 	padding: 20px;
-  width: 900px;
-  height: 100px;
-  margin-top: 10px;
-  margin-left: 200px;
-  border: 1px solid black;
-  font-size: 20px;
+	width: 900px;
+	height: 100px;
+	margin-top: 10px;
+	margin-left: 200px;
+	border: 1px solid black;
+	font-size: 20px;
 }
 
-#detail_web > h4 {
+#detail_web>h4 {
 	margin-top: -10px;
 }
 

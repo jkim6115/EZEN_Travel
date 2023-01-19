@@ -103,7 +103,7 @@ $(document).ready(function(){
 			<div class="content_main">
 				<div class="content_ti">
 					<input type="hidden" name="user_num" value="${sessionScope.user_num}" />
-					<input type="text" name="title" id="title" placeholder="제목을 입력해 주세요." />
+					<input type="text" name="title" id="title" placeholder="제목을 입력해 주세요." size="131" style="height:20px;" />
 				</div>
 				<div class="content_co">
 					<textarea cols="50" rows="20" name="content" id="content" style="resize:none" placeholder="내용을 입력해 주세요."></textarea>

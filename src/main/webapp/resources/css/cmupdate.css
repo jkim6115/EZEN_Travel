@@ -187,108 +187,66 @@ a {
 	margin: 0 auto;
 }
 
-.content_section header {
-	height: 50px;
-	width: 1300px;
-	margin-left: 20px;
-	padding-top: 100px;
-	margin-bottom: 50px;
-}
-
 .comment_update_wrap {
 	margin: 100px 520px;
+	width: auto;
+	height: auto;
 }
 
-.content_head {
+.comment_main {
 	position: relative;
+	width: 400px;
+	height: 300px;
+	width: 400px;
+	height: 300px;
+	margin-left: -40px;
 }
 
-.head_fr {
-	float: left;
+#board_comment {
+	width: 400px;
+	height: 300px;
 }
 
-.head_fr h2 {
-	padding-top: 35px;
-	font-size: 30px;
+/* 수정, 취소 버튼 */
+.update_btn {
+	width: 400px;
+	height: 100px;
 	margin-left: 100px;
+	margin-top: 20px;
 }
 
-/* 취소, 등록 버튼 */
-.head_btn {
-	float: right;
-	margin-top: 60px;
-	margin-right: 100px;
+.update_btn input {
+	margin-right: 15px;
 }
 
-.head_btn #cancel {
-	width: 70px;
-	height: 40px;
-	font-size: 17px;
-	border: 2px solid #29367c;
+.update_btn #cancel {
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 15px;
 	text-align: center;
+	cursor: pointer;
+}
+
+.update_btn #update {
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.update_btn #cancel:hover, .update_btn #update:hover {
 	background-color: #29367c;
 	color: #fff;
 	cursor: pointer;
 }
 
-.head_btn #update {
-	width: 70px;
-	height: 40px;
-	font-size: 17px;
-	border: 2px solid #29367c;
-	text-align: center;
-	background-color: #fff;
-	color: #29367c;
-	cursor: pointer;
-}
-
-/* 글쓰기 콘텐츠 구문 */
-.content_wrap {
-	margin-top: 60px;
-}
-
-.content_wrap form {
-	border-top: 5px solid #023059;
-	border-left: 2px solid #8aa0b8;
-	border-bottom: 2px solid #8aa0b8;
-	border-right: 2px solid #8aa0b8;
-	width: 1100px;
-	height: 760px;
-	margin-left: 120px;
-	margin-top: 50px;
-}
-
-.content_tb {
-	margin-top: 30px;
-	width: 1000px;
-}
-
-.subject_frm {
-	width: 900px;
-}
-
-.subject_frm td {
-	display: block;
-}
-
-.subject_frm #subject {
-	width: 900px;
-	margin-left: 100px;
-	height: 35px;
-	font-size: 15px;
-}
-
-.content_frm {
-	display: block;
-	margin-top: 30px;
-	margin-left: 100px;
-}
-
-.content_frm #content {
-	width: 900px;
-	height: 600px;
-	font-size: 15px;
-}
 /*====================================================*/
 
 /* ================ ǲ��(����) ===============*/

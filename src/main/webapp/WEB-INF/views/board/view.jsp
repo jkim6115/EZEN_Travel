@@ -14,7 +14,6 @@
 			function() {
 				// 목록 버튼
 				$('#list').click(function() {
-					alert('목록버튼');
 					$('#frm').attr('action', 'board.do').submit();
 				});
 

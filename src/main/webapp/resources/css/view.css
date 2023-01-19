@@ -281,13 +281,13 @@ a {
 	margin-left: 10px;
 }
 
-.cm_modify:hover, .cm_delete:hover{
+.cm_modify:hover, .cm_delete:hover {
 	background-color: #29367c;
 	color: #fff;
 	cursor: pointer;
 }
 
-.comment_contents{
+.comment_contents {
 	width: 1000px;
 	hegiht: auto;
 	margin-bottom: 20px;
@@ -295,11 +295,11 @@ a {
 	padding-top: 10px;
 }
 
-.comment_wrbox{
+.comment_wrbox {
 	width: 1000px;
 }
 
-.cm_bx{
+.cm_bx {
 	width: 1000px;
 	height: 150px;
 }
@@ -309,6 +309,8 @@ a {
 	height: 30px;
 	margin-top: -10px;
 	border: 1px solid #000;
+	background-color: #f7f7f7;
+	cursor: pointer;
 }
 
 /* ================ ǲ��(����) ===============*/
