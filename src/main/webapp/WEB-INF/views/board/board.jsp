@@ -9,52 +9,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/css/board.css" />
-<style type="text/css">
-.board_wrap {
-	width: 890PX;
-	height:600px;
-	margin: 10px auto;
-	
-}
-
-table, tr, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}
-
-#page_list a {
-	text-decoration: none;
-	color: black;
-}
-
-#board_search {
-	width: 890px;
-	height:50px;
-	margin: 0px -28px;
-}
-
-.search_type {
-	float: left;
-}
-
-.board_search_box {
-	float: left;
-}
-
-.search_type {
-	margin: 2px 5px;
-    padding: 2px;
-}
-
-.inner_search {
-	float: left;
-}
-
-.board_search_btn {
-	float: left;
-	margin: 1px 5px;
-}
-</style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">

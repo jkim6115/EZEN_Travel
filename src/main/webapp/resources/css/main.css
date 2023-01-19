@@ -181,6 +181,7 @@ a {
   height: 250px;
   background-color: rgba(247, 242, 223, 0.5);
   margin: 0 auto;
+  margin-top: 30px;
   padding-top: 25px;
 }
 
@@ -264,7 +265,6 @@ a {
 /* ================ 섹션(필터, 지도, 리스트) ===============*/
 .section {
   width: 980px;
-  height: 700px;
   margin: 0 auto;
 }
 
@@ -430,7 +430,7 @@ a {
 .info {
   width: 500px;
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 150px;
   text-align: center;
 }
 
