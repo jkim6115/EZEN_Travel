@@ -5,32 +5,83 @@
   "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
   
 <tiles-definitions>
-    <definition name="default" template="/WEB-INF/views/map.jsp">
-		<put-attribute name="login" value=""/>
-		<put-attribute name="footer" value="/WEB-INF/views/footer/footer.jsp"/>
+	<definition name="default" template="/WEB-INF/views/main/main.jsp">
+		<put-attribute name="login" value="" />
+		<put-attribute name="logout" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/include/tiles/footer.jsp" />
 	</definition>
 	
-	 <definition name="top" template="/WEB-INF/views/main.jsp">
-		<put-attribute name="top" value=""/>
-		<put-attribute name="content" value="/WEB-INF/layout/include/content.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/footer/footer.jsp"/>
-  	 </definition>  
+	<definition name="/map" extends="default">
+		<put-attribute name="login" value="/WEB-INF/views/include/tiles/login.jsp" />
+		<put-attribute name="logout" value="/WEB-INF/views/include/tiles/logout.jsp" />
+	</definition>
 	
-	  <definition name="/map" extends="default">
-		<put-attribute name="login" value="/WEB-INF/views/header/login.jsp" />
-	  </definition>
-	  
-	  <definition name="/intro" template="/WEB-INF/views/intro.jsp">
-		<put-attribute name="login" value="/WEB-INF/views/header/login.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/views/footer/footer.jsp"/>
-	  </definition>
-	  
-	  <definition name="/detail" template="/WEB-INF/views/detail.jsp">
-		<put-attribute name="login" value="/WEB-INF/views/header/login.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/views/footer/footer.jsp"/>
-	  </definition>
+	<definition name="/intro" template="/WEB-INF/views/intro/intro.jsp">
+		<put-attribute name="login" value="/WEB-INF/views/include/tiles/login.jsp" />
+		<put-attribute name="logout" value="/WEB-INF/views/include/tiles/logout.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/include/tiles/footer.jsp"/>
+	</definition>
 	
-	 <definition name="main" extends="top">
-		<put-attribute name="top" value="/WEB-INF/layout/top_after.jsp"/>
-	 </definition>
+	<definition name="/detail" template="/WEB-INF/views/detail/detail.jsp">
+		<put-attribute name="login" value="/WEB-INF/views/include/tiles/login.jsp" />
+		<put-attribute name="logout" value="/WEB-INF/views/include/tiles/logout.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/include/tiles/footer.jsp"/>
+	</definition>
+	
+	<definition name="/boardb" template="/WEB-INF/views/board/board.jsp">
+         <put-attribute name="login" value="" />
+         <put-attribute name="logout" value="" />
+         <put-attribute name="footer" value="/WEB-INF/views/include/tiles/footer.jsp"/>
+     </definition>
+     
+     <definition name="/boardc" template="/WEB-INF/views/board/cmupdate.jsp">
+         <put-attribute name="login" value="" />
+         <put-attribute name="logout" value="" />
+         <put-attribute name="footer" value="/WEB-INF/views/include/tiles/footer.jsp"/>
+     </definition>
+     
+     <definition name="/boardu" template="/WEB-INF/views/board/update.jsp">
+         <put-attribute name="login" value="" />
+         <put-attribute name="logout" value="" />
+         <put-attribute name="footer" value="/WEB-INF/views/include/tiles/footer.jsp"/>
+     </definition>
+     
+     <definition name="/boardv" template="/WEB-INF/views/board/view.jsp">
+         <put-attribute name="login" value="" />
+         <put-attribute name="logout" value="" />
+         <put-attribute name="footer" value="/WEB-INF/views/include/tiles/footer.jsp"/>
+     </definition>
+     
+     <definition name="/boardw" template="/WEB-INF/views/board/write.jsp">
+         <put-attribute name="login" value="" />
+         <put-attribute name="logout" value="" />
+         <put-attribute name="footer" value="/WEB-INF/views/include/tiles/footer.jsp"/>
+     </definition>
+     
+     	<definition name="board/board" extends="/boardb">
+		<put-attribute name="login" value="/WEB-INF/views/include/tiles/login.jsp" />
+		<put-attribute name="logout" value="/WEB-INF/views/include/tiles/logout.jsp" />
+		</definition>
+		
+		   	<definition name="board/cmupdate" extends="/boardc">
+		<put-attribute name="login" value="/WEB-INF/views/include/tiles/login.jsp" />
+		<put-attribute name="logout" value="/WEB-INF/views/include/tiles/logout.jsp" />
+		</definition>
+		
+		   	<definition name="board/update" extends="/boardu">
+		<put-attribute name="login" value="/WEB-INF/views/include/tiles/login.jsp" />
+		<put-attribute name="logout" value="/WEB-INF/views/include/tiles/logout.jsp" />
+		</definition>
+		
+		   	<definition name="board/view" extends="/boardv">
+		<put-attribute name="login" value="/WEB-INF/views/include/tiles/login.jsp" />
+		<put-attribute name="logout" value="/WEB-INF/views/include/tiles/logout.jsp" />
+		</definition>
+		
+		   	<definition name="board/write" extends="/boardw">
+		<put-attribute name="login" value="/WEB-INF/views/include/tiles/login.jsp" />
+		<put-attribute name="logout" value="/WEB-INF/views/include/tiles/logout.jsp" />
+		
+	</definition>
+	
 </tiles-definitions>

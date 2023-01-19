@@ -16,6 +16,7 @@ function secession() {
             console.log(response);
             // callback(); //연결끊기(탈퇴)성공시 서버에서 처리할 함수
             alert(user_num + " 회원정보가 삭제되었습니다.");
+            location.reload();
         },
         fail: function(error) {
         	alert("회원정보가 없습니다.");

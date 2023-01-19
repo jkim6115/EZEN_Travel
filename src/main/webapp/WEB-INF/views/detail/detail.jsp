@@ -1,27 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detail</title>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <!-- 상세페이지 CSS -->
-    <link rel="stylesheet" href="resources/css/detail.css" />
-    <!-- 상세페이지 JS -->
-    <script defer src="resources/js/detail.js"></script>
-  </head>
+<html>
+<%@include file="/WEB-INF/views/include/detail/detailHead.jsp"%>
+
   <body>
     <form>
       <input id="area_num" value="${area_num}" type="hidden" />
     </form>
+    
+     <!-- 메인페이지 전체 div-->
     <div class="view_main">
-      <!-- 메인페이지 전체 div-->
-      <div id="login"><tiles:insertAttribute name="login" /></div>
+
+	<!-- 로그인/로그아웃 전환 -->
+		<c:choose>
+			<c:when test="${empty sessionScope.user_num}">
+				<div id="login">
+					<tiles:insertAttribute name="login" />
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div id="logout">
+					<tiles:insertAttribute name="logout" />
+				</div>
+			</c:otherwise>
+		</c:choose>
 
       <!-- 상세 정보 표시 -->
       <section class="et detail_section">
@@ -39,7 +44,10 @@
         </div>
       </section>
 
-      <div id="footer"><tiles:insertAttribute name="footer" /></div>
+      <!-- 푸터 -->
+	  <div id="footer">
+		  <tiles:insertAttribute name="footer" />
+	  </div>
       
     </div>
     <div class="ocean">

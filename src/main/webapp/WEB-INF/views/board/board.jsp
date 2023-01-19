@@ -1,89 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@ page import="com.ezentravel.DTO.Cm_boardDTO"%>
 <%@ page import="com.ezentravel.DTO.PageDTO"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="resources/css/board.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-						// 현재 페이지 표시
-						// 현재 페이지는 굵은 글씨로 표시된다.
-						var page = $('span#page_list a');
-						$.each(page, function(index, value) {
-							if ($(value).text() == '${pv.currentPage}') {
-								$(value).css({
-									'font-size' : 'larger'
-								});
-								return;
-							}
-						});
 
-						// 검색 버튼 쿼리문
-						$('.board_search_btn').click(function() {
-							$('#board_search').attr('action', 'board.do'); 
-							$('#board_search').submit(); // 게시판 리스트로 다시 값을 보냄
-						});
+<%@include file="/WEB-INF/views/include/board/boardHead.jsp"%>
 
-						// 검색 버튼 결과 값 확인
-						var sKey = '${pv.searchKey}';
-						if (sKey == 'search_all' || // 전체 검색 (제목 + 내용)
-							sKey == 'search_title' || // 제목 검색
-							sKey == 'search_content' || // 내용 검색
-							sKey == 'search_writer') { // 글쓴이 검색
-							$('[name=searchWord]').val('${pv.searchWord}');
-							$('[name=searchKey]').val('${pv.searchKey}');
-						}
-						
-						// 회원만 글쓸 수 있게끔 설정
-						$('#write').click(function(){
-							if(`${gdto.user_num}`!=""){
-								$('#frm_wr').submit();
-							}else{
-								alert('로그인 후 이용해주세요.');
-							}
-						});
-					});
-</script>
-</head>
 <body>
 	 <div class="view_main"><!-- 메인페이지 전체 div-->
-      <header class="et header"><!-- 헤더 -->
-        <div class="category"><!-- 카테고리 전체 div -->
-          <ul class="category_list"><!-- 카테고리 리스트 ul -->
-            <li><a class="login_button" href="javascript:kakaoLogin()">로그인</a>
-		    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-			<script src="resources/js/login.js"></script></li>
-          </ul>
-          <form id="form-kakao-login" method="post" action="/controller/login.do">
-		  		<input type="hidden" name="user_num"/>
-		    	<input type="hidden" name="nickname"/>
-		    	<!-- <input type="hidden" name="email"/>
-		    	<input type="hidden" name="gender"/>
-		    	<input type="hidden" name="age_range"/>
-		    	<input type="hidden" name="profile"/> -->
-		  </form>
-		  
-        </div>
-        <div class="et logo">
-          <!--중앙로고배너-->
-          <a href="./mainmap.do" class="logo_img">
-            <img src="resources/image/logo.png" alt="로고" />
-          </a>
-        </div>
-        <div class="category"><!-- 카테고리 전체 div -->
-          <ul class="category_list"><!-- 카테고리 리스트 ul -->
-            <li><a href="./board.do" class="category_button">E.T 광장</a></li>
-            <li><a href="./intro.do" class="category_button">E.T 소개</a></li>
-          </ul>
-        </div>
- </header>
+	 
+	 <!-- 로그인/로그아웃 전환 -->
+		<c:choose>
+			<c:when test="${empty sessionScope.user_num}">
+				<div id="login">
+					<tiles:insertAttribute name="login" />
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div id="logout">
+					<tiles:insertAttribute name="logout" />
+				</div>
+			</c:otherwise>
+		</c:choose>
+		
 	<!-- 섹션 영역 -->
 	<section class="et commu_section">
 		<!-- 커뮤니티 게시판 -->
@@ -200,15 +143,12 @@
 			</form>
 		</div>
 	</section>
- <footer class="et footer">
-        <!-- 풋터 -->
-        <div class="et info">
-          <p>법인명(상호) : ezentravel</p>
-          <p>
-            Copyright © ezentravel. All rights reserved. Hosting by cafe24 corp.
-          </p>
-        </div>
-      </footer>
+	
+ 		<!-- 푸터 -->
+		<div id="footer">
+			<tiles:insertAttribute name="footer" />
+		</div>
+		
     </div>
     <div class="ocean">
       <!-- 바다 출력 div -->

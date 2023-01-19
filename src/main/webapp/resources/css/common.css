@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* 글씨체 */
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
@@ -141,6 +143,7 @@ a {
   margin: 0 auto;
   background-color: rgba(236, 231, 211, 0.5);
   border-radius: 20px;
+  margin-top: 20px;
 }
 
 .category_list{
@@ -175,125 +178,6 @@ a {
   height: 340px;
 }
 
-/* =============== 섹션 =============== */
-
-/* detail_section */
-.detail_section {
-	position: relative;
-	width: 1340px;
-	height: 1340px;
-	margin: 0 auto;
-	/*background-color: #d3e9fc;*/
-}
-
-/* detail_box */
-.detail_box {
-	float: left;
-	width: 1340px;
-	height: 1320px;
-	margin-top: 50px;
-}
-
-#detail_title {
-	margin: 20px auto;
-	text-align: center;
-}
-
-#detail_title h1 {
-	display: inline;
-    font-size: xxx-large;
-}
-
-/* detail_img */
-#detail_img {
-	margin: 0 auto;
-	width: 920px;
-	height: 620px;
-}
-
-#detail_img>img {
-	width: 920px;
-	height: 620px;
-}
-
-/* slide btn  */
-.slide_btn_box>button {
-	position: relative;
-	top: 60%;
-	margin-top: -45px;
-	width: 40px;
-	height: 40px;
-	font-size: 12px;
-	color: white;
-	background-color: #023059;
-	border: none;
-	border-radius: 20px;
-	cursor: pointer;
-}
-
-.slide_btn_box>.slide_btn_prev {
-	display: block;
-    top: -390px;
-    font-size: x-large;
-    left: 100px;
-    padding-bottom: 2px;
-}
-
-.slide_btn_box>.slide_btn_next {
-	display: block;
-    top: -390px;
-    font-size: x-large;
-    right: -1170px;
-    padding-bottom: 2px;
-}
-
-h4 {
-    border-bottom: 5px solid black;
-}
-
-.detail_info {
-	width: 900px;
-    margin-left: 220px;
-    font-size: x-large;
-    padding: 10px 0px;
-}
-
-.slide_btn_box>.slide_btn_prev:hover {
-	background-color: #347ebf;
-}
-
-.slide_btn_box>.slide_btn_next:hover {
-	background-color: #347ebf;
-}
-
-/* detail_src */
-#detail_src {
-	padding: 20px;
-	width: 900px;
-	height: auto;
-	margin-top: -50px;
-	margin-left: 200px;
-	font-size: 20px;
-	overflow: scroll;
-}
-
-#detail_src>h4 {
-	margin-top: -10px;
-}
-
-#detail_web {
-	padding: 20px;
-	width: 900px;
-	height: 100px;
-	margin-top: 10px;
-	margin-left: 200px;
-	font-size: 20px;
-}
-
-#detail_web>h4 {
-	margin-top: -10px;
-}
-
 /*====================================================*/
 
 /* ================ 풋터(정보) ===============*/
@@ -306,7 +190,7 @@ h4 {
 .info {
   width: 500px;
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 150px;
   text-align: center;
 }
 

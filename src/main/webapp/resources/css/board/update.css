@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/* =============== Content Section =============== */
+
+/* content_wrap */
+.update_wrap form {
+	border-top: 5px solid #023059;
+	border-left: 2px solid #8aa0b8;
+	border-bottom: 2px solid #8aa0b8;
+	border-right: 2px solid #8aa0b8;
+	position: relative;
+	width: 1100px;
+	height: 760px;
+	margin: 0 auto;
+}
+
+.update_wrap {
+	width: 950px;
+	height: 500px;
+	margin: 0px 25%;
+}
+
+.update_head {
+	margin-top: 50px;
+	margin-left: 80px;
+}
+
+.content_section {
+	position: relative;
+	width: 1100px;
+	height: 760px;
+	margin-left: 150px;
+	margin-top:100px;
+}
+
+
+/* 취소, 등록 버튼 */
+.update_btn {
+	float: right;
+	margin-top: 30px;
+	margin-right: 70px;
+}
+
+.update_btn #cancel {
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.update_btn #update {
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.update_btn #cancel:hover, .update_btn #update:hover {
+	background-color: #29367c;
+	color: #fff;
+	cursor: pointer;
+}
+
+.update_main {
+	width: 950px;
+	height: 500px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.update_head p {
+	font-size: 20px;
+}
+
+.update_head p {
+	font-size: 20px;
+}
+
+input#title {
+    width: 950px;
+    margin-left: -5px;
+    height: 30px;
+}
+
+#content {
+	width: 950px;
+	height: 500px;
+	font-size: 15px;
+	margin: 0 auto;
+}
+
+/*====================================================*/

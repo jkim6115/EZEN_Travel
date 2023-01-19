@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/* =============== 섹션 =============== */
+
+section {
+	height:800px;
+}
+
+#wrap {
+	width: 940px;
+    height: 500px;
+    margin: auto;
+	background-color: rgba(236, 231, 211, 0.5);
+	color: rgb(1, 88, 113);
+}
+
+.title {
+	padding: 15px;
+	text-align: center;
+	font-size: xxx-large;
+}
+
+.member {
+	text-align: center;
+	font-size: xx-large;
+}
+
+.content {
+	padding: 0px 30px;
+	font-size: x-large;
+}
+
+/*====================================================*/
