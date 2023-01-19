@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="resources/css/cmpupdate.css" />
+<link rel="stylesheet" href="resources/css/cmupdate.css" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -81,7 +81,7 @@ function cancelRun(){
 		<div class="comment_update_wrap">
 			<form name="frm" id="frm" method="post">
 				<div class="comment_main">
-					<textarea rows="13" cols="40" name="board_comment" id="board_comment">${dto.board_comment}</textarea>
+					<textarea rows="13" cols="40" name="board_comment" id="board_comment" style="resize: none">${dto.board_comment}</textarea>
 				</div>
 				<div class="update_btn">
 				    <input type="hidden" name="user_num" value="${dto.user_num}" />

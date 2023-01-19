@@ -82,11 +82,11 @@ function cancelRun(){
 		<div class="update_wrap">
 			<form name="frm" id="frm" method="post">
 				<div class="update_head">			
-					<span>제목</span>
+					<p>제목</p>
 					<input type="text" name="title" id="title" value="${dto.title}"/>
 				</div>
 				<div class="update_main">
-					<textarea rows="13" cols="40" name="content" id="content">${dto.content}</textarea>
+					<textarea rows="13" cols="40" name="content" id="content" style="resize: none">${dto.content}</textarea>
 				</div>
 				<div class="update_btn">
 					<input type="hidden" name="bno" value="${dto.bno}"/>

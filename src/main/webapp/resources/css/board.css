@@ -181,156 +181,158 @@ a {
 /* =============== Community Section =============== */
 /* blind 숨김 설정 */
 .blind {
-  visibility: hidden;
-  width: 0px;
-  height: 0px;
-  font-size: 0px;
-  top: -99999px;
-  position: absolute;
-  overflow: hidden;
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	top: -99999px;
+	position: absolute;
+	overflow: hidden;
 }
 /* community_wrap */
 .commu_section {
-  position: relative;
-  width: 890px;
-  height: 940px;
-  margin: 0 auto;
+	position: relative;
+	width: 1200px;
+	height: 1000px;
+	margin: 0 auto;
 }
 
-.commu_wrap {
-  width: 1300px;
-  height: 1220px;
-  padding-top: 50px;
-  margin-left: 20px;
+/* board_btn */
+.board_btn {
+	margin-bottom: 10px;
 }
 
-/* community_box */
-.commu_btnbox {
-  margin-right: 50px;
-  margin-bottom: 10px;
+#write {
+	width: 80px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	border: 1px solid 29367c;
+	font-size: 15px;
+	text-align: center;
 }
 
-#commu_wr {
-  float: right;
-  width: 50px;
-  text-align: center;
-  box-sizing: border-box;
-  border: 1px solid #29367c;
-  background-color: #fff;
-  margin-bottom: 5px;
+#write:hover {
+	background-color: #29367c;
+	color: #fff;
+	cursor: pointer;
 }
 
-#commu_wr:hover {
-  background-color: #29367c;
-  color: #fff;
-  cursor: pointer;
+.board_wrap {
+	width: 1300px;
+	height: 1220px;
+	padding-top: 50px;
+	margin-left: 150px;
 }
 
-.commu_box {
-  width: 1200px;
-  margin: 10px 50px;
-  border-top: 1px solid #29367c;
-  border-bottom: 1px solid #29367c;
+.board_box {
+	width: 950px;
+	margin-top: 10px;
+	margin-right: 100px;
+	border-top: 1px solid #29367c;
+	border-bottom: 1px solid #29367c;
+	border-top: 1px solid #29367c;
 }
 
-#commu_head {
-  background-color: #cee1f2;
+#board_head {
+	background-color: #cee1f2;
 }
 
-#commu_info {
-  background-color: #e9f8ff;
-  border-top: 1px solid #29367c;
+#board_info {
+	background-color: #e9f8ff;
+	border-top: 1px solid #29367c;
+	text-align: center;
 }
 
 /* community_list */
-.commu_page_wrap {
-  margin-left: 400px;
-}
-.commu_page_box > a,
-.commu_page_box > span {
-  display: inline-block;
-  margin: 10px 20px;
-  border-radius: 5px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  color: #000;
+.board_list {
+	width: 950px;
+	margin-top: 10px;
+	text-align: center;
 }
 
-.commu_page_box > a:hover,
-.commu_page_box span:hover {
-  text-decoration-line: underline;
+.board_list>a, .board_list>span {
+	display: inline-block;
+	margin: 10px 20px;
+	border-radius: 5px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #000;
+}
+
+.board_list_box {
+	margin-left: auto;
+	width: auto;
+}
+
+.board_list>a:hover, .board_list span:hover {
+	text-decoration-line: underline;
 }
 
 /* Community search */
 fieldset {
-  display: block;
-  border: none;
-  margin-left: 170px;
-  margin-top: 50px;
+	display: block;
+	border: none;
+	margin-left: 170px;
+	margin-top: 50px;
 }
 
 .commu_search_wrap {
-  position: relative;
+	position: relative;
 }
 
-#search_type {
-  width: 100px;
-  height: 27px;
-  vertical-align: middle;
-  float: left;
-  margin-left: 70px;
-  border: 2px solid #29367c;
-  border-radius: 50px;
-  text-align: center;
-  background-color: #fff;
-  /* background: transparent; */
-}
-
-.select_area .inner {
-  float: left;
-}
-
-.commu_search_wrap section {
-  display: none;
-  position: relative;
-  float: left;
+.search_type {
+	width: 100px;
+	height: 27px;
+	vertical-align: middle;
+	float: left;
+	margin-right: 10px;
+	border: 2px solid #29367c;
+	border-radius: 50px;
+	text-align: center;
+	background-color: #fff;
 }
 
 /* 검색 기능 */
-.commu_search {
-  width: 500px;
+.board_search_box {
+	float: left;
+	width: 500px;
 }
 
 /* 검색 창 */
+.inner_search {
+	float: left;
+}
+
 .inner_search .inner_keyword {
-  width: 400px;
-  height: 20px;
-  float: left;
-  border: 2px solid #29367c;
-  padding: 1px;
+	width: 400px;
+	height: 20px;
+	float: left;
+	border: 2px solid #29367c;
+	padding: 1px;
 }
 
 /* 검색 버튼 */
-#commu_search_btn {
-  float: right;
-  width: 50px;
-  height: 25px;
-  margin-right: 35px;
-  border: 2px solid #29367c;
-  background-color: #fff;
-  border-radius: 50px;
+.board_search_btn {
+	float: right;
+	width: 50px;
+	height: 25px;
+	margin-right: 35px;
+	border: 2px solid #29367c;
+	background-color: #fff;
+	border-radius: 50px;
 }
 
-#commu_search_btn {
-  vertical-align: 50px;
+.board_search_btn {
+	vertical-align: 50px;
 }
 
-#commu_search_btn:hover {
-  background-color: #29367c;
-  color: #fff;
-  cursor: pointer;
+.board_search_btn:hover {
+	background-color: #29367c;
+	color: #fff;
+	cursor: pointer;
 }
 /*====================================================*/
 

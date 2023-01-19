@@ -30,6 +30,7 @@ table, tr, th, td {
 #board_search {
 	width: 890px;
 	height:50px;
+	margin: 0px -28px;
 }
 
 .search_type {
@@ -40,12 +41,18 @@ table, tr, th, td {
 	float: left;
 }
 
+.search_type {
+	margin: 2px 5px;
+    padding: 2px;
+}
+
 .inner_search {
 	float: left;
 }
 
 .board_search_btn {
 	float: left;
+	margin: 1px 5px;
 }
 </style>
 <script
@@ -131,7 +138,7 @@ table, tr, th, td {
 				<!-- 리스트 글쓰기 버튼 -->
 				<form id="frm_wr" name="frm_wr" method="get" action="write.do">
 						<input type="button" id="write" value="글쓰기" />
-						<input type="hidden" id="user_num" value="${gdto.user_num}" />
+						<input type="hidden" id="user_num" value="${sessionScope.user_num}" />
 				</form>
 			</div>
 			<!-- 게시판 리스트 출력 -->
@@ -141,7 +148,7 @@ table, tr, th, td {
 					<col style="width: 10%" />
 					<col />
 					<col style="width: 10%" />
-					<col style="width: 10%" />
+					<col style="width: 15%" />
 					<col style="width: 10%" />
 				</colgroup>
 				<thead id="board_head">
