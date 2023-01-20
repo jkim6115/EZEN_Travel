@@ -93,7 +93,7 @@ public class MapController {
 		@ResponseBody
 		@PostMapping("/secession.do")
 		public ModelAndView secession_process(@ModelAttribute UsDTO usDTO) {
-			ModelAndView mv = new ModelAndView("redirect:/mainmap.do");
+			ModelAndView mv = new ModelAndView("redirect:/logout.do");
 			
 			dao.user_delete(usDTO);
 			return mv;
