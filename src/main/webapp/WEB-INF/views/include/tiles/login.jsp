@@ -2,10 +2,9 @@
 
 <!-- 헤더 -->
 <header class="et header">
-	<!-- 카테고리 전체 div -->
-	<div class="category">
-		<!-- 카테고리 리스트 ul -->
-		<ul class="category_list">
+	<!-- kakao login/out -->
+	<div class="kakao">
+		<ul class="kakao_login">
 			<li><a class="login_button" href="javascript:kakaoLogin()">로그인</a>
 				<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 				<script src="resources/js/kakao/login.js"></script>
@@ -16,10 +15,18 @@
 			<input type="hidden" name="nickname" /> 
 		</form>
 	</div>
+	
+	<div class="category">
+		<div class="category_mem">
+			<h5>안녕하세요, EZEN Travel입니다.</h5>
+		</div>
+	</div>
+	
 	<!--중앙로고배너-->
 	<div class="et logo">
 		<a href="./mainmap.do" class="logo_img"> <img src="resources/image/logo.png" alt="로고" /></a>
 	</div>
+
 	<!-- 카테고리 전체 div -->
 	<div class="category">
 		<!-- 카테고리 리스트 ul -->

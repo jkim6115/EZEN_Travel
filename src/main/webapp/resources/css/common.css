@@ -137,45 +137,80 @@ a {
 }
 
 /* 로그인 등 카테고리*/
-.category {
-  width: 260px;
-  height: 40px;
-  margin: 0 auto;
-  background-color: rgba(236, 231, 211, 0.5);
-  border-radius: 20px;
-  margin-top: 20px;
+.kakao {
+	width: 170px;
+	height: 40px;
+	float: right;
+	line-height: 40px;
+	font-size: 20px;
 }
 
-.category_list{
+.kakao_login li {
+	text-align: center;
+}
+
+.kakao_login li:last-child {
+	margin-left: 15px;
+}
+
+.kakao_login li a {
+	padding: 5px;
+}
+
+.kakao_login li a:hover {
+	border-radius: 20px;
+	background-color: rgb(228, 217, 203);
+}
+
+.category {
+	width: 260px;
+	height: 40px;
+	margin: 0 auto;
+	background-color: rgba(236, 231, 211, 0.5);
+	border-radius: 20px;
+}
+
+.category_mem {
+	width: 260px;
+	height: 40px;
+}
+
+.category_mem h5 {
+	line-height: 40px;
+	font-size: 18px;
+	text-align: center;
+}
+
+.category_list {
 	margin-left: 30px;
 }
 
 .category_list li {
-  color: red;
-  width: 100px;
-  height: 30px;
-  display: inline;
-  margin-top: 5px;
-  font-size: 20px;
-  position: relative;
-  text-align: center;
-  border-radius: 20px;
+	color: red;
+	width: 100px;
+	height: 30px;
+	display: inline;
+	margin-top: 5px;
+	font-size: 20px;
+	position: relative;
+	text-align: center;
+	
 }
 
-.category_list li a{
-		color: rgb(1, 88, 113);
+.category_list li a {
+	padding: 7px 11px;
+	color: rgb(1, 88, 113);
+}
 
-	}
-
-
-.category_list li:hover {
-  background-color: rgb(228, 217, 203);
+.category_list li a:hover {
+	background-color: rgb(228, 217, 203);
+	border-radius: 20px;
 }
 
 /* 로고배너 */
 .logo {
-  width: 300px;
-  height: 340px;
+	width: 300px;
+	height: 340px;
 }
 
 /*====================================================*/

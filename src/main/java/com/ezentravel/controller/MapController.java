@@ -99,6 +99,13 @@ public class MapController {
 			return mv;
 		}
 		
+		@RequestMapping(value = "/logout.do", method = RequestMethod.GET)
+		public String logout(HttpSession httpSession) {
+			httpSession.invalidate();
+
+		    return "/map";
+		}
+		
 		@RequestMapping(value = "/intro.do", method = RequestMethod.GET)
 		public String intro_process() {
 			return "/intro";

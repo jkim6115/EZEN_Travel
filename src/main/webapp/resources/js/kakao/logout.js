@@ -7,11 +7,8 @@ function kakaoLogout() {
         return;
     }
     Kakao.Auth.logout(function(response) {
+  		
         alert("로그아웃 되었습니다.");
-        location.href = "mainmap.do"
-		location.reload();
+        location.href = "logout.do";
     });
 };
-
-const logout = document.querySelector('#kakaoLogout');
-logout.addEventListener('click', kakaoLogout);
