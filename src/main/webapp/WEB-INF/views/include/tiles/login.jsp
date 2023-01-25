@@ -13,6 +13,7 @@
 		<form id="form-kakao-login" method="post" action="/controller/login.do">
 			<input type="hidden" name="user_num" /> 
 			<input type="hidden" name="nickname" /> 
+			<input type="hidden" name="profile" /> 
 		</form>
 	</div>
 	

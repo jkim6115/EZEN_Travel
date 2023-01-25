@@ -79,6 +79,7 @@ public class MapController {
 			
 			httpSession.setAttribute("user_num", usDTO.getUser_num());
 			httpSession.setAttribute("nickname", usDTO.getNickname());
+			httpSession.setAttribute("profile", usDTO.getProfile());
 			
 			int result = dao.user_select(usDTO);
 

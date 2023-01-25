@@ -4,11 +4,21 @@ package com.ezentravel.DTO;
 public class UsDTO {
 	private String user_num;
 	private String nickname;
+	private String profile;
 
 	public UsDTO(String user_num, String nickname) {
 		super();
 		this.user_num = user_num;
 		this.nickname = nickname;
+		this.profile = profile;
+	}
+	
+	public String getProfile() {
+		return profile;
+	}
+	
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 
 	public String getUser_num() {

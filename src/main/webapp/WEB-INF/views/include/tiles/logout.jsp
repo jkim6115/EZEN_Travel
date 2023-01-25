@@ -21,7 +21,8 @@
 	
 	<div class="category">
 		<div class="category_mem">
-			<h5>어서오세요, <%= session.getAttribute("nickname")%>님</h5>
+	<img class="profile" src="${profile}" alt="kakao_profile_image">
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;어서오세요, <%= session.getAttribute("nickname")%>님😍</h4>
 		</div>
 	</div>
 

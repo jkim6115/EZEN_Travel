@@ -8,7 +8,7 @@ window.Kakao.init("32e988cd47f5d946ffc7ef96c6419fef");
 
 function kakaoLogin() {
   window.Kakao.Auth.login({
-    scope: "profile_nickname", //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
+    scope: "profile_nickname, profile_image", //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
     success: function (response) {
 
       const {
@@ -31,15 +31,16 @@ function kakaoLogin() {
           
           let user_num = res.id;
           let nickname = res.kakao_account.profile.nickname;
-          
-          
+ 		  let profile = res.kakao_account.profile.thumbnail_image_url;
+  
 	      $('#form-kakao-login input[name=user_num]').val(user_num);
 	      $('#form-kakao-login input[name=nickname]').val(nickname);				
-
+	      $('#form-kakao-login input[name=profile]').val(profile);
+	
 		  // 사용자 정보가 포함된 폼을 서버로 제출한다.
 		  document.querySelector('#form-kakao-login').submit();
 		  
-          alert("로그인 성공");
+          alert(nickname + "님 로그인 성공 !");
         },
       });
     },
